@@ -8,7 +8,7 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
       trabajo: 'Consumidor',
     },
     frase:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit explicabo minima pariatur, earum est temporibus nam illum labore mollitia, a molestias error non ipsum quos soluta necessitatibus natus. Provident, quis?',
+      'Fue muy bueno que en un momento difícil el BCP me ayude con un nuevo canal de ventas',
   },
   {
     id: 2,
@@ -16,7 +16,8 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
       nombre: 'Ivan',
       trabajo: 'Proveedor de Telas',
     },
-    frase: 'Soy un tallarin',
+    frase:
+      'Fue una muy buena experiencia porque siempre es bueno trabajar con un cliente que tiene el respaldo del BC',
   },
   {
     id: 3,
@@ -24,7 +25,6 @@ export const CAROUSEL_DATA_ITEMS: ICarouselItem[] = [
       nombre: 'Tilin',
       trabajo: 'Dazante de tijeras',
     },
-    frase:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit explicabo minima pariatur, earum est temporibus nam illum labore mollitia, a molestias error non ipsum quos soluta necessitatibus natus. Provident, quis?',
+    frase: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
   },
 ];

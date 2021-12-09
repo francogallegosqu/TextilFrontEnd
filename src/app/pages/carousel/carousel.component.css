@@ -5,17 +5,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  border-radius: 25px;
+  /* background-image: url("src/assets/images/1.jpg"); */
+  background: #215ead;
 }
-/*
-.dsc-carousel::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.48);
-}*/
 .dsc-carousel__content {
   text-align: center;
   width: 100%;
@@ -35,12 +28,14 @@
   background-size: cover;
   background-position: center;
   transition: 1s all ease-in;
+  margin-bottom: 100px;
 }
 .dsc-carousel__content-item h1 {
   color: white;
   font-weight: 900;
   text-transform: uppercase;
   z-index: 1;
+  width: 60%;
 }
 .dsc-carousel__content-item h1 span {
   color: #ff8000;

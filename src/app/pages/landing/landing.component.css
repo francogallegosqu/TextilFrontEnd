@@ -1,0 +1,26 @@
+.title-testimonios,
+.subtitle-testimonios {
+  text-align: left;
+  margin: 15px 60px;
+  width: 95%;
+}
+
+.title-testimonios {
+  color: #086a9b;
+}
+
+.carousel-container {
+  margin: 0 50px;
+}
+
+@media screen and (max-width: 800px) {
+  .carousel-container {
+    margin: 0 auto;
+  }
+  .title-testimonios,
+  .subtitle-testimonios {
+    text-align: center;
+    width: 100%;
+    margin: 15px auto;
+  }
+}
