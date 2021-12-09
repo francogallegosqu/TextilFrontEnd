@@ -3,9 +3,12 @@
 }
 
 .navbar {
+  padding-top: 0;
   background-color: white;
 }
-
+.navbar-brand {
+  margin-left: 0 !important ;
+}
 .nav-text:hover {
   color: #f2357b !important;
 }
@@ -13,7 +16,7 @@
 .nav-link {
   color: #4e545c !important;
   display: block;
-  padding: 0.4rem 1rem !important;
+  padding: 0.4rem 0.7rem !important;
 }
 
 .navbar-login-btn {
