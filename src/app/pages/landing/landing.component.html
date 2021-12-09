@@ -1,1 +1,16 @@
-<p>landing works!</p>
+<p>landing works</p>
+<div class="container-fluid">
+  <div
+    class="row bg-black"
+    style="
+      background-image: url('assets/images/1.jpg');
+      border-radius: 25px;
+      margin: 0 50px;
+    "
+  >
+    <h1 class="text-white mt-3">Testimonios</h1>
+    <div class="col-12 px-30 mx-auto mt-2">
+      <app-carousel [items]="carouselData"></app-carousel>
+    </div>
+  </div>
+</div>
