@@ -4,7 +4,7 @@ section {
 
 .container-fluid {
   padding: 2% 13% 6%;
-  background: url("/src/assets/img/landing-header.png") repeat-x center bottom,
+  background: url("/assets/img/landing-header.png") repeat-x center bottom,
     linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
 }
 
