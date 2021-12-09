@@ -1,0 +1,9 @@
+section {
+  position: relative;
+}
+
+.container-fluid {
+  padding: 0 13%;
+  background: url("/src/assets/img/landing-header.png") repeat-x center bottom,
+    linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
+}

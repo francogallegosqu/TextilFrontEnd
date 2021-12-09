@@ -1,0 +1,44 @@
+.container-fluid {
+  padding: 1% 13%;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.nav-text:hover {
+  color: #f2357b !important;
+}
+
+.nav-link {
+  color: #4e545c !important;
+  display: block;
+  padding: 0.4rem 1rem !important;
+}
+
+.navbar-login-btn {
+  background-color: transparent;
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #4e545c;
+}
+
+.navbar-register-btn {
+  background-color: #f2357b;
+  border-color: transparent;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav > li {
+    margin: 0.2rem 0;
+  }
+  .navbar-login-btn {
+    margin-left: 0;
+  }
+  .nav-text {
+    padding-left: 0 !important;
+  }
+}
