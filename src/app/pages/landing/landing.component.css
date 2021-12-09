@@ -4,13 +4,16 @@ section {
 
 .container-fluid {
   padding: 2% 13% 6%;
-  background: url("/assets/img/landing-header.png") repeat-x center bottom,
-    linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
 }
 
 /* Hero section */
 #hero {
   color: #086a9b !important;
+}
+
+#hero .container-fluid {
+  background: url("/assets/img/landing-header.png") repeat-x center bottom,
+    linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
 }
 
 .heading-left-column {
@@ -51,10 +54,20 @@ section {
 /* products section */
 
 #products {
-  padding: 130px;
+  padding: 120px;
 }
 
 #products .title {
   color: #086a9b;
   text-align: center;
+}
+
+#products .nav-link {
+  color: black;
+}
+
+#products .nav-pills button.active {
+  color: white;
+  background-color: #f2357b !important;
+  font-size: 16px;
 }

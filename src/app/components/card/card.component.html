@@ -1,1 +1,11 @@
-<p>card works!</p>
+<div class="card" style="width: 18rem">
+    <img src="https://enlacocina.b-cdn.net/wp-content/uploads/2018/02/comida-a-domicilio-1024x576.jpg"
+        class="card-img-top" alt="..." />
+    <div class="card-body">
+        <h5 class="card-title">{{ item.nombre }}</h5>
+        <p class="card-text">
+            {{ item.categoria }}
+        </p>
+        <a href="#" class="btn btn-primary">Ver {{ tipo }}</a>
+    </div>
+</div>

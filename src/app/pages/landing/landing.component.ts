@@ -14,7 +14,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();
-    console.log(this.products)
+    console.log(this.products[0])
   }
 
 }

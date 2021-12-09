@@ -15,15 +15,37 @@
         </button>
       </div>
       <div class="col-lg-5 d-none d-lg-block heading-right-column">
-        <img
-          class="hero-img"
+        <img class="hero-img"
           src="https://e7.pngegg.com/pngimages/639/452/png-clipart-computer-icons-avatar-user-profile-people-icon-child-face-thumbnail.png"
-          alt="Smiling young man"
-        />
+          alt="Smiling young man" />
       </div>
     </div>
   </div>
 </section>
 <section id="products">
   <h2 class="title fw-bold">Lo nuevo en Comunea</h2>
+
+  <ul class="nav nav-pills justify-content-center mt-5" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-products-tab" data-bs-toggle="pill" data-bs-target="#pills-products"
+        type="button" role="tab" aria-controls="pills-products" aria-selected="true">Productos</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-orders-tab" data-bs-toggle="pill" data-bs-target="#pills-orders" type="button"
+        role="tab" aria-controls="pills-orders" aria-selected="false">Pedidos</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-products" role="tabpanel" aria-labelledby="pills-products-tab">
+      <app-card [item]="products[0]" [tipo]="'producto'"></app-card>
+    </div>
+    <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
+      <app-card [item]="products[1]" [tipo]="'pedido'"></app-card>
+    </div>
+  </div>
+  <div class="container-fluid">
+
+
+
+  </div>
 </section>
