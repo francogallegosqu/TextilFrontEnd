@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CAROUSEL_DATA_ITEMS } from '../carousel/carousel.const';
-import { ICarouselItem } from '../carousel/Icarousel-item.metadata';
-
+import { CAROUSEL_DATA_ITEMS } from 'src/app/components/carousel/carousel.const';
+import { ICarouselItem } from 'src/app/models/Icarousel-item';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
