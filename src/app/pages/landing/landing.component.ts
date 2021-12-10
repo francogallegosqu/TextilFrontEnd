@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { Item } from 'src/app/models/item';
+import { OrdersService } from 'src/app/services/orders.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -9,12 +10,13 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class LandingComponent implements OnInit {
 
-  products!: Product[];
-  constructor(private productService: ProductsService) { }
+  products!: Item[];
+  orders!: Item[];
+  constructor(private productService: ProductsService, private orderService: OrdersService) { }
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();
-    console.log(this.products[0])
+    this.orders = this.orderService.getAllOrders();
   }
 
 }
