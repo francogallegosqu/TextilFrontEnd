@@ -1,0 +1,31 @@
+#testimonials {
+  background-color: #086a9b;
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.testimonials-img {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+#testimonials .carousel-item {
+  padding: 7% 15%;
+}
+
+.carousel-item h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.carousel-item h1 span {
+  color: #f2357b;
+}
+
+.carousel-item p {
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+}
