@@ -11,8 +11,8 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
+  
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
-  constructor() {}
   products!: Item[];
   orders!: Item[];
   constructor(private productService: ProductsService, private orderService: OrdersService) { }

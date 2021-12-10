@@ -23,7 +23,6 @@ import { CardComponent } from './components/card/card.component';
     BrowserModule,
     AppRoutingModule
   ],
-  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
