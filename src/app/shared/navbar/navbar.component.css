@@ -6,6 +6,11 @@
   padding-top: 0;
   background-color: white;
 }
+
+.shadow {
+  box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
 .navbar-brand {
   margin-left: 0 !important ;
 }
