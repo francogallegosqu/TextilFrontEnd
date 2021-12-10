@@ -1,0 +1,248 @@
+section {
+  position: relative;
+  padding-top: 120px;
+}
+
+.container-fluid {
+  padding: 2% 13% 6%;
+}
+
+.title {
+  color: #086a9b;
+  text-align: center;
+}
+
+/* Hero section */
+#hero {
+  padding-top: 0;
+  color: #086a9b !important;
+}
+
+#hero .container-fluid {
+  background: url("/assets/img/landing-header.png") repeat-x center bottom,
+    linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
+}
+
+.heading-left-column {
+  padding-right: 0 !important;
+}
+
+#hero .title {
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-weight: 400;
+  line-height: 1.17;
+}
+
+.heading-right-column {
+  position: relative;
+}
+
+.hero-img {
+  width: 65%;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  border-radius: 50%;
+}
+
+.hero-register-btn {
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: #f2357b;
+  border: none;
+  padding: 0.75rem 1rem 0.75rem 0.8rem;
+  color: #fff !important;
+}
+
+/* products section */
+
+#products .nav-link {
+  color: black;
+}
+
+#products .nav-pills button.active {
+  color: white;
+  background-color: #f2357b !important;
+  font-size: 16px;
+}
+
+#products .container-fluid {
+  padding: 1.5% 0 1%;
+}
+
+#products .row {
+  padding: 0 15%;
+}
+
+#products .item-column {
+  padding: 0 2%;
+}
+
+#products .btn-container {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.view-more-btn {
+  color: #2a2c2e !important;
+  padding: 0.6rem 2.5rem !important;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #2a2c2e;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  #products .item-column {
+    padding-bottom: 5%;
+  }
+  #products .btn-container {
+    margin-top: 30px;
+  }
+}
+
+/* About section */
+
+.about-container {
+  text-align: center;
+  padding: 2%;
+}
+
+.about-title {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.about-icon {
+  color: #086a9b;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 25px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.wrapper .center-line-left {
+  position: absolute;
+  height: 65%;
+  width: 4px;
+  background: #086a9b;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+.wrapper .center-line-right {
+  position: absolute;
+  height: 72%;
+  width: 4px;
+  background: #086a9b;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+.wrapper .timeline-row {
+  display: flex;
+}
+.wrapper .timeline-row-1 {
+  justify-content: flex-start;
+}
+.wrapper .timeline-row-2 {
+  justify-content: flex-end;
+}
+.wrapper .timeline-row section {
+  border-radius: 5px;
+  width: calc(50% - 40px);
+  padding: 0 0 20px;
+  position: relative;
+}
+.wrapper .timeline-row section::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  top: 28px;
+  z-index: -1;
+  transform: rotate(45deg);
+}
+.timeline-row-1 section::before {
+  right: -7px;
+}
+.timeline-row-2 section::before {
+  left: -7px;
+}
+.timeline-row section .icon {
+  position: absolute;
+  background: #086a9b;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 17px;
+}
+.timeline-row-1 section .icon {
+  right: -60px;
+}
+.timeline-row-2 section .icon {
+  left: -60px;
+}
+.timeline-row section .details,
+.timeline-row section .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-row section .details .title {
+  padding-top: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.timeline-row section p {
+  font-size: 0.9rem;
+  margin: 10px 0 17px 0;
+}
+
+@media (max-width: 790px) {
+  .wrapper .center-line-left {
+    left: 40px;
+  }
+  .wrapper .center-line-right {
+    left: 40px;
+    height: 75%;
+  }
+  .wrapper .timeline-row {
+    margin: 30px 0 3px 60px;
+  }
+  .wrapper .timeline-row section {
+    width: 100%;
+  }
+  .timeline-row-1 section::before {
+    left: -7px;
+  }
+  .timeline-row-1 section .icon {
+    left: -60px;
+  }
+}
+@media (max-width: 440px) {
+  .wrapper .center-line-left,
+  .wrapper .center-line-right,
+  .timeline-row section::before,
+  .timeline-row section .icon {
+    display: none;
+  }
+  .wrapper .timeline-row {
+    margin: 10px 0;
+  }
+}
