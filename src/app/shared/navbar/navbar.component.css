@@ -40,6 +40,11 @@
   color: #fff !important;
 }
 
+/* Todo: Editar estilos para el boton de profile */
+.profile-btn {
+  color: red !important;
+}
+
 @media (max-width: 768px) {
   .navbar-nav > li {
     margin: 0.2rem 0;

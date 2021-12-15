@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,9 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   myElement!: HTMLElement | null;
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  loggedIn = false;
+
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -24,6 +27,14 @@ export class NavbarComponent implements OnInit {
     else {
       this.myElement?.classList.remove("shadow");
     }
+  }
+
+  login() {
+    this.loggedIn = true
+  }
+
+  logout() {
+    this.loggedIn = false
   }
 
 }
