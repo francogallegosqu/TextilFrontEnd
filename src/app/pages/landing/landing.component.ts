@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCogs, faHandshake, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { CAROUSEL_DATA_ITEMS } from 'src/app/components/carousel/carousel.const';
 import { ICarouselItem } from 'src/app/models/Icarousel-item';
 import { Item } from 'src/app/models/item';
@@ -15,6 +16,13 @@ export class LandingComponent implements OnInit {
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   products!: Item[];
   orders!: Item[];
+
+  // Icons 
+  faSignInAlt = faSignInAlt;
+  faCogs = faCogs;
+  faHandshake = faHandshake;
+
+
   constructor(private productService: ProductsService, private orderService: OrdersService) { }
 
   ngOnInit(): void {

@@ -41,8 +41,14 @@
 }
 
 /* Todo: Editar estilos para el boton de profile */
+
+.profile-icon {
+  display: inline-block;
+  font-size: 20px;
+}
+
 .profile-btn {
-  color: red !important;
+  color: #1e1f20;
 }
 
 @media (max-width: 768px) {
