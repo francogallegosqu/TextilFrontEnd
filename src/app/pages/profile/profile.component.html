@@ -1,5 +1,92 @@
-<div class="container-fluid">
-    <h3>Mis Datos</h3>
-    <h4>Datos de cuenta</h4>
-    WORKS!
+<div class="profile">
+    <ul class="nav flex-column vertical-nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="profile">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile">Link</a>
+        </li>
+    </ul>
+
+    <div class="container-fluid my-data-container">
+        <h1>Mis Datos</h1>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="subtitle">Datos de cuenta</h2>
+            </div>
+            <div class="col">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+        <div class="container-fluid rows-container">
+            <div class="row">
+                <div class="col">
+                    Email
+                </div>
+                <div class="col">
+                    {{user.email}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Password
+                </div>
+                <div class="col">
+                    {{user.password}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="subtitle">Datos personales</h2>
+            </div>
+            <div class="col">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+        <div class="container-fluid rows-container">
+            <div class="row">
+                <div class="col">
+                    Razon social
+                </div>
+                <div class="col">
+                    {{user.businessName}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Documento
+                </div>
+                <div class="col">
+                    {{user.document}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2 class="subtitle">Empleados</h2>
+            </div>
+            <div class="col">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+        <div class="container-fluid rows-container">
+            <div class="row" *ngFor="let employee of user.employyes; index as i">
+                <div class="col">
+                    {{i+1}}
+                </div>
+                <div class="col">
+                    {{ employee.businessName }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>

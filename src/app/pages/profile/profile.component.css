@@ -1,0 +1,19 @@
+.profile {
+  background-color: #eeeeee;
+  position: relative !important;
+}
+
+.section {
+}
+.vertical-nav {
+  position: fixed;
+}
+
+.my-data-container {
+  padding: 2% 28%;
+}
+
+.rows-container {
+  border-radius: 6px;
+  background-color: #fff;
+}
