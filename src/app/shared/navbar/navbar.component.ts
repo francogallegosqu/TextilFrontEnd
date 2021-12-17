@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
   myElement!: HTMLElement | null;
   loggedIn = false;
   faUserCircle = faUserCircle;
+  name_user = 'Tilin';
+  email_user = 'Tilin@eso.dale';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,

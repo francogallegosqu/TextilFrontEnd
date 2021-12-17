@@ -62,3 +62,61 @@
     padding-left: 0 !important;
   }
 }
+
+/* DROPDOWN */
+
+.user-menu-name,
+.user-menu-email {
+  padding: 0;
+  margin: 0 6px 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-menu-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.user-menu-email {
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  user-select: text;
+}
+
+.user-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px 0 12px;
+  float: left;
+  white-space: nowrap;
+  line-height: 40px;
+}
+
+/* El menu dropdown se muestra cuando ocurre hover en lugar de dar click */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  min-width: 180px;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* El menu dropdown se muestra automaticamente y el btn-profile se oculta */
+  .dropdown .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .dropdown .profile-btn {
+    display: none;
+  }
+}
