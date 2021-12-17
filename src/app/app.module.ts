@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
+import { CarouselImgComponent } from './components/carousel-img/carousel-img.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     FooterComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    CarouselImgComponent
   ],
   imports: [
     BrowserModule,

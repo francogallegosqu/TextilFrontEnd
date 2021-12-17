@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CAROUSEL_IMG_DATA_ITEMS } from 'src/app/components/carousel-img/carousel-img.const';
 import { CAROUSEL_DATA_ITEMS } from 'src/app/components/carousel/carousel.const';
 import { ICarouselItem } from 'src/app/models/Icarousel-item';
 import { Item } from 'src/app/models/item';
@@ -11,16 +12,17 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
-  
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
+  public carousel_imgData: string[] = CAROUSEL_IMG_DATA_ITEMS;
   products!: Item[];
   orders!: Item[];
-  constructor(private productService: ProductsService, private orderService: OrdersService) { }
+  constructor(
+    private productService: ProductsService,
+    private orderService: OrdersService
+  ) {}
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();
     this.orders = this.orderService.getAllOrders();
   }
-
 }
-
