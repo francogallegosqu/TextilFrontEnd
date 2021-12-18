@@ -15,9 +15,11 @@
         </button>
       </div>
       <div class="col-lg-5 d-none d-lg-block heading-right-column">
-        <img class="hero-img"
+        <img
+          class="hero-img"
           src="https://e7.pngegg.com/pngimages/639/452/png-clipart-computer-icons-avatar-user-profile-people-icon-child-face-thumbnail.png"
-          alt="Smiling young man" />
+          alt="Smiling young man"
+        />
       </div>
     </div>
   </div>
@@ -28,34 +30,68 @@
 <section id="products">
   <h2 class="title fw-bold">Lo nuevo en nombre</h2>
 
-
-  <ul class="nav nav-pills justify-content-center mt-5" id="pills-tab" role="tablist">
+  <ul
+    class="nav nav-pills justify-content-center mt-5"
+    id="pills-tab"
+    role="tablist"
+  >
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-products-tab" data-bs-toggle="pill" data-bs-target="#pills-products"
-        type="button" role="tab" aria-controls="pills-products" aria-selected="true">Productos</button>
+      <button
+        class="nav-link active"
+        id="pills-products-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-products"
+        type="button"
+        role="tab"
+        aria-controls="pills-products"
+        aria-selected="true"
+      >
+        Productos
+      </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="pills-orders-tab" data-bs-toggle="pill" data-bs-target="#pills-orders" type="button"
-        role="tab" aria-controls="pills-orders" aria-selected="false">Pedidos</button>
+      <button
+        class="nav-link"
+        id="pills-orders-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-orders"
+        type="button"
+        role="tab"
+        aria-controls="pills-orders"
+        aria-selected="false"
+      >
+        Pedidos
+      </button>
     </li>
   </ul>
   <div class="container-fluid">
     <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-products" role="tabpanel" aria-labelledby="pills-products-tab">
-
+      <div
+        class="tab-pane fade show active"
+        id="pills-products"
+        role="tabpanel"
+        aria-labelledby="pills-products-tab"
+      >
         <div class="row">
-          <div class="col-lg-4 item-column col-md-12  d-flex align-items-center"
-            *ngFor="let item of products.slice(0, 3);">
+          <div
+            class="col-lg-4 item-column col-md-12 d-flex align-items-center"
+            *ngFor="let item of products.slice(0, 3)"
+          >
             <app-card [item]="item" [tipo]="'producto'"> </app-card>
           </div>
         </div>
-
       </div>
-      <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
-
+      <div
+        class="tab-pane fade"
+        id="pills-orders"
+        role="tabpanel"
+        aria-labelledby="pills-orders-tab"
+      >
         <div class="row">
-          <div class="col-lg-4 item-column col-md-12  d-flex align-items-center"
-            *ngFor="let item of orders.slice(0, 3);">
+          <div
+            class="col-lg-4 item-column col-md-12 d-flex align-items-center"
+            *ngFor="let item of orders.slice(0, 3)"
+          >
             <app-card [item]="item" [tipo]="'pedido'"> </app-card>
           </div>
         </div>
@@ -73,13 +109,11 @@
   <h2 class="title fw-bold">¿Cómo funciona?</h2>
   <div class="container-fluid mt-4">
     <div class="row">
-
       <div class="col-lg-6 col-md-12 col-sm-12 about-container">
         <i class="fas fa-cogs fa-4x about-icon"></i>
         <h1 class="about-title fw-bold">Si buscas proveedores</h1>
         <div class="wrapper">
-          <div class="center-line-left">
-          </div>
+          <div class="center-line-left"></div>
           <div class="timeline-row timeline-row-1">
             <section>
               <span class="icon fa-stack">
@@ -110,7 +144,10 @@
               <div class="details">
                 <span class="title">Recibe alertas</span>
               </div>
-              <p>Te notificaremos al encontrar los proveedores que mejor se adecuen a lo que necesitas</p>
+              <p>
+                Te notificaremos al encontrar los proveedores que mejor se
+                adecuen a lo que necesitas
+              </p>
             </section>
           </div>
         </div>
@@ -121,8 +158,7 @@
         <h1 class="about-title fw-bold">Si buscas clientes</h1>
 
         <div class="wrapper">
-          <div class="center-line-right">
-          </div>
+          <div class="center-line-right"></div>
           <div class="timeline-row timeline-row-1">
             <section>
               <span class="icon fa-stack">
@@ -153,7 +189,10 @@
               <div class="details">
                 <span class="title">Recibe solicitudes</span>
               </div>
-              <p>Encontraremos clientes que esten interesados en tus productos y/o servicios y te notificaremos</p>
+              <p>
+                Encontraremos clientes que esten interesados en tus productos
+                y/o servicios y te notificaremos
+              </p>
             </section>
           </div>
           <div class="timeline-row timeline-row-2">
@@ -164,15 +203,18 @@
               <div class="details">
                 <span class="title">Responde los pedidos</span>
               </div>
-              <p>Para que los clientes sepan que puedes atenderlos y se pongan en contacto contigo</p>
+              <p>
+                Para que los clientes sepan que puedes atenderlos y se pongan en
+                contacto contigo
+              </p>
             </section>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
+
 <div class="container-fluid">
   <h1 class="title-testimonios">Testimonios</h1>
   <p class="subtitle-testimonios">
@@ -182,5 +224,11 @@
     <div class="col-12 mt-2">
       <app-carousel [items]="carouselData"></app-carousel>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 mt-2">
+    <app-carousel-img [items]="carousel_imgData"></app-carousel-img>
   </div>
 </div>

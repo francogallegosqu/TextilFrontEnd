@@ -1,0 +1,60 @@
+<section id="prom-products">
+  <div
+    id="prom-products-carousel"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="3000"
+  >
+    <!-- LOS INDICADORES QUE REFERENCIAN A LOS ITEMS DES CARRUSEL -->
+    <!-- <div class="carousel-indicators">
+      <button
+        *ngFor="let item of items; let i = index"
+        type="button"
+        data-bs-target="#prom-products-carousel"
+        [attr.data-slide-to]="i"
+        [attr.aria-current]="{ i == 0 }"
+        [ngClass]="{ active: i == 0 }"
+      ></button>
+    </div> -->
+
+    <!-- LOS ITEMS QUE COMPONEN EL CARRUSEL -->
+    <!-- <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        *ngFor="let item of items; let i = index"
+        [ngClass]="{ active: i == 0 }"
+        [ngStyle]="{ 'background-image': 'url(' + item + ')' }"
+      ></div>
+    </div> -->
+
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        *ngFor="let item of items; let i = index"
+        [ngClass]="{ active: i == 0 }"
+      >
+        <img [src]="item" class="d-block w-100" />
+      </div>
+    </div>
+
+    <!-- BOTONES PARA NAVEGAR POR EL CARRUSEL -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#prom-products-carousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#prom-products-carousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
