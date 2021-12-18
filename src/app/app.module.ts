@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarouselImgComponent } from './components/carousel-img/carousel-img.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
+    CarouselImgComponent
+
   ],
   imports: [
     BrowserModule,
