@@ -8,6 +8,11 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CarouselImgComponent } from './components/carousel-img/carousel-img.component';
 
 
@@ -19,11 +24,17 @@ import { CarouselImgComponent } from './components/carousel-img/carousel-img.com
     FooterComponent,
     CarouselComponent,
     CardComponent,
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent,
     CarouselImgComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

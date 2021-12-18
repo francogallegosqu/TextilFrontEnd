@@ -1,24 +1,73 @@
-<nav class="navbar sticky-top navbar-light navbar-expand-md" id="nav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">App logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link fw-normal nav-text" href="#">Preguntas frecuentes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link navbar-login-btn" href="#"> Iniciar sesion </a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-login-btn navbar-register-btn nav-link" href="#">
-            Registrate gratis
-          </a>
-        </li>
-      </ul>
+<div class="sticky-top" *ngIf="!loggedIn; else elseBlock">
+  <nav class="navbar navbar-light navbar-expand-md" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">App logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-normal nav-text" href="#">Preguntas frecuentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-login-btn" href="#" (click)="login()">
+              Iniciar sesion
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-login-btn navbar-register-btn nav-link" href="#">
+              Registrate gratis
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
+<ng-template #elseBlock>
+  <nav class="navbar sticky-top navbar-light navbar-expand-md" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">App logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-normal nav-text" href="#">Preguntas frecuentes</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link profile-btn dropdown-toggle" data-bs-toggle="dropdown" role="button"
+              aria-expanded="false" href="#">
+              <fa-icon [icon]="faUserCircle" class="profile-icon"></fa-icon>
+              {{name_user}}
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <fa-icon [icon]="faUserCircle" class="user-icon fa-2x"></fa-icon>
+                <p class="user-menu-name">Hola {{ name_user }}</p>
+                <p class="user-menu-email">{{ email_user }}</p>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" routerLink="profile">Perfil
+                </a>
+              </li>
+              <li><a class="dropdown-item" href="#">Compras</a></li>
+              <li><a class="dropdown-item" href="#">Ventas</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-template>

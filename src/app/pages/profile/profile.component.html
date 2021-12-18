@@ -1,0 +1,139 @@
+<div class="profile">
+    <!-- <ul class="nav flex-column vertical-nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="profile">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile">Link</a>
+        </li>
+    </ul> -->
+
+    <div class="container-fluid my-data-container">
+        <h1 class="title">Mis Datos</h1>
+
+        <div class="row subtitle-row">
+            <div class="col">
+                <h2 class="subtitle">Datos de cuenta</h2>
+            </div>
+            <div class="col help-column">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+        <div class="rows-container">
+            <div class="row main-row">
+                <div class="col-10 field-value-column">
+                    <div class="row field-value-row">
+                        <div class="col-lg-5">
+                            <span class="field">Email</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="value">{{ user.email }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 action-column">
+                    <a class="arrow-btn" href="">
+                        <fa-icon [icon]="faChevronRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="row main-row">
+                <div class="col-10 field-value-column">
+                    <div class="row field-value-row">
+                        <div class="col-lg-5">
+                            <span class="field">Password</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="value">{{ user.password }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 action-column">
+                    <a class="arrow-btn" href="">
+                        <fa-icon [icon]="faChevronRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row subtitle-row">
+            <div class="col">
+                <h2 class="subtitle">Datos personales</h2>
+            </div>
+            <div class="col help-column">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+
+        <div class="rows-container">
+            <div class="row main-row">
+                <div class="col-10 field-value-column">
+                    <div class="row field-value-row">
+                        <div class="col-lg-5">
+                            <span class="field">Razon social</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="value">{{ user.businessName }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 action-column">
+                    <a class="arrow-btn" href="">
+                        <fa-icon [icon]="faChevronRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="row main-row">
+                <div class="col-10 field-value-column">
+                    <div class="row field-value-row">
+                        <div class="col-lg-5">
+                            <span class="field">Documento</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="value">{{ user.document }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 action-column">
+                    <a class="arrow-btn" href="">
+                        <fa-icon [icon]="faChevronRight"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row subtitle-row">
+            <div class="col">
+                <h2 class="subtitle">Empleados</h2>
+            </div>
+            <div class="col help-column">
+                <button class="help-btn">Necesito ayuda</button>
+            </div>
+        </div>
+        <div class="rows-container">
+            <div *ngFor="let employee of user.employyes; index as i">
+                <div class="row main-row">
+                    <div class="col-10 field-value-column">
+                        <div class="row field-value-row">
+                            <div class="col-lg-5">
+                                <span class="field">{{i+1}}</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <span class="value">{{ employee.businessName }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 action-column">
+                        <a class="arrow-btn" href="">
+                            <fa-icon [icon]="faChevronRight"></fa-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
