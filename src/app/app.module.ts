@@ -10,7 +10,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CarouselComponent,
     CardComponent,
     ProfileComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

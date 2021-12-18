@@ -1,5 +1,5 @@
 .my-data-container {
-  padding: 2.9rem 26%;
+  padding: 2.9rem 27%;
 }
 
 .profile {
@@ -67,4 +67,10 @@
 .action-column {
   margin: auto 0;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .my-data-container {
+    padding: 2.9rem 20%;
+  }
 }

@@ -1,0 +1,10 @@
+#login {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.container-fluid {
+  margin: auto;
+}
