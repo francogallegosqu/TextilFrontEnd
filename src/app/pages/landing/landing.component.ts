@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnDestroy, OnInit } from '@angular/core';
 import { faCogs, faHandshake, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { CAROUSEL_IMG_DATA_ITEMS } from 'src/app/components/carousel-img/carousel-img.const';
 
@@ -14,7 +14,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css'],
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit, OnDestroy {
   myElement!: HTMLElement | null;
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   public carousel_imgData: string[] = CAROUSEL_IMG_DATA_ITEMS;
