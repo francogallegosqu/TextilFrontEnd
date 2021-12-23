@@ -1,10 +1,43 @@
 #login {
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #eee;
+  padding: 3.3rem 0;
 }
 
-.container-fluid {
-  margin: auto;
+p {
+  font-size: 0.9rem;
+}
+
+a {
+  color: #f2357b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.hello {
+  margin-bottom: 0;
+  color: #afbcca;
+}
+
+.login-card {
+  margin: 0 auto;
+  padding: 2.2rem;
+  text-align: center;
+  background-color: white;
+  width: 24rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 1200px) {
+  #login {
+    background-color: #fff;
+  }
+  .login-card {
+    border: none;
+  }
 }
