@@ -1,5 +1,5 @@
 <div class="sticky-top" *ngIf="!loggedIn; else elseBlock">
-  <nav class="navbar navbar-light navbar-expand-md" id="nav">
+  <nav class="navbar navbar-light navbar-expand-md navbar-shadow" id="nav">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">App logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,7 +27,7 @@
   </nav>
 </div>
 <ng-template #elseBlock>
-  <nav class="navbar sticky-top navbar-light navbar-expand-md" id="nav">
+  <nav class="navbar sticky-top navbar-light navbar-expand-md navbar-shadow" id="nav">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">App logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

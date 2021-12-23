@@ -1,6 +1,6 @@
 #login {
   background-color: #eee;
-  padding: 3.3rem 0;
+  padding: 3.3rem;
 }
 
 p {
@@ -19,6 +19,11 @@ a:hover {
   text-decoration: underline;
 }
 
+label {
+  color: #8095ac;
+  font-size: 0.9rem !important;
+}
+
 .hello {
   margin-bottom: 0;
   color: #afbcca;
@@ -26,7 +31,7 @@ a:hover {
 
 .login-card {
   margin: 0 auto;
-  padding: 2.2rem;
+  padding: 2.4rem;
   text-align: center;
   background-color: white;
   width: 24rem;
@@ -36,6 +41,7 @@ a:hover {
 @media (max-width: 1200px) {
   #login {
     background-color: #fff;
+    padding: 1.5rem;
   }
   .login-card {
     border: none;
