@@ -18,6 +18,9 @@ export class LandingComponent implements OnInit, OnDestroy {
   myElement!: HTMLElement | null;
   public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
   public carousel_imgData: string[] = CAROUSEL_IMG_DATA_ITEMS;
+  public id_carousel_img1 : string = 'top_imgs';
+  public id_carousel_img2 : string = 'bottom_imgs';
+
   products!: Item[];
   orders!: Item[];
 

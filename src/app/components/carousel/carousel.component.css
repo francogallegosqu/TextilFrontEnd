@@ -1,17 +1,10 @@
-#testimonials {
+section {
   background-color: var(--primary);
   color: white;
   text-align: center;
   border-radius: 30px;
 }
-
-.testimonials-img {
-  width: 10%;
-  border-radius: 100%;
-  margin: 20px;
-}
-
-#testimonials .carousel-item {
+.carousel-item {
   padding: 7% 15%;
 }
 
@@ -21,7 +14,7 @@
 }
 
 .carousel-item h1 span {
-  color: #f2357b;
+  color: var(--complementary);
 }
 
 .carousel-item p {

@@ -7,8 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CarouselImgComponent implements OnInit {
   @Input() items: string[] = [];
-
-  constructor() {}
+  @Input() id_carousel: string = '';
+  constructor() 
+  {
+  }
 
   ngOnInit(): void {}
 }
