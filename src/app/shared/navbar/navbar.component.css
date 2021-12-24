@@ -14,7 +14,7 @@
 }
 
 .nav-text:hover {
-  color: #f2357b !important;
+  color: var(--primary) !important;
 }
 
 .nav-item {
@@ -37,9 +37,9 @@
 }
 
 .navbar-register-btn {
-  background-color: #f2357b;
+  background-color: var(--complementary);
   border-color: transparent;
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .profile-icon {
