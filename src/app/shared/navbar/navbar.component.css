@@ -14,7 +14,7 @@
 }
 
 .nav-text:hover {
-  color: var(--primary) !important;
+  color: var(--complementary) !important;
 }
 
 .nav-item {
