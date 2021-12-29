@@ -1,0 +1,7 @@
+aside {
+    display: block;
+}
+
+.bd-sidebar {
+    grid-area: sidebar;
+}
