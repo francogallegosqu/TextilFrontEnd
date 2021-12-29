@@ -1,6 +1,6 @@
 :root {
-  --primary: #007DFA;
-  --complementary: #FA9C04;
+  --primary: #007dfa;
+  --complementary: #fa9c04;
   /*
   anterior
   --primary: #004d74;
@@ -10,4 +10,5 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  margin: 0;
 }

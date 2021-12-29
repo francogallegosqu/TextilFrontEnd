@@ -1,6 +1,10 @@
 #login {
   background-color: #eee;
-  padding: 3.3rem;
+  padding-bottom: 150px;
+}
+
+form {
+  width: 288px;
 }
 
 p {
@@ -8,7 +12,7 @@ p {
 }
 
 a {
-  color: #f2357b;
+  color: var(--complementary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -21,27 +25,28 @@ a:hover {
 
 label {
   color: #8095ac;
-  font-size: 0.9rem !important;
-}
-
-.hello {
-  margin-bottom: 0;
-  color: #afbcca;
 }
 
 .login-card {
-  margin: 0 auto;
+  margin: auto;
+  width: fit-content;
   padding: 2.4rem;
-  text-align: center;
   background-color: white;
-  width: 24rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 6px;
+}
+
+.login-btn {
+  color: white;
+  background-color: var(--complementary);
+  width: 100%;
+  max-width: 229px;
+  height: 48px;
 }
 
 @media (max-width: 1200px) {
   #login {
     background-color: #fff;
-    padding: 1.5rem;
   }
   .login-card {
     border: none;

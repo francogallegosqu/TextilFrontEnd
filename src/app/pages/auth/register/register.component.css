@@ -1,0 +1,23 @@
+#register {
+  padding-bottom: 150px;
+}
+
+form {
+  width: 288px;
+}
+
+a {
+  color: var(--complementary);
+}
+
+label {
+  color: #8095ac;
+}
+
+.continue-btn {
+  color: white;
+  background-color: var(--complementary);
+  width: 100%;
+  max-width: 229px;
+  height: 48px;
+}

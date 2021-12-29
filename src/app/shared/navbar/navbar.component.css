@@ -39,7 +39,8 @@
 .navbar-register-btn {
   background-color: var(--complementary);
   border-color: transparent;
-  color: #000 !important;
+  font-weight: 500;
+  color: white !important;
 }
 
 .profile-icon {
