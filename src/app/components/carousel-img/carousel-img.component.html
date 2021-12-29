@@ -1,7 +1,7 @@
-<section id="prom-products">
+<section [id]="id_carousel">
   <div
-    id="prom-products-carousel"
-    class="carousel slide"
+    [id]="id_carousel + '-carousel'"
+    class="carousel slide carousel-fade"
     data-bs-ride="carousel"
     data-bs-interval="3000"
   >
@@ -10,10 +10,9 @@
       <button
         *ngFor="let item of items; let i = index"
         type="button"
-        data-bs-target="#prom-products-carousel"
+        [attr.data-bs-target]="'#'+id_carousel + '-carousel'"
         [attr.data-slide-to]="i"
-        [attr.aria-current]="{ i == 0 }"
-        [ngClass]="{ active: i == 0 }"
+        [ngClass]="{ 'active': i == 0 }"
       ></button>
     </div> -->
 
@@ -31,7 +30,7 @@
       <div
         class="carousel-item"
         *ngFor="let item of items; let i = index"
-        [ngClass]="{ active: i == 0 }"
+        [ngClass]="{ 'active': i == 0 }"
       >
         <img [src]="item" class="d-block w-100" />
       </div>
@@ -41,7 +40,7 @@
     <button
       class="carousel-control-prev"
       type="button"
-      data-bs-target="#prom-products-carousel"
+      [attr.data-bs-target]="'#'+id_carousel + '-carousel'"
       data-bs-slide="prev"
     >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -50,7 +49,7 @@
     <button
       class="carousel-control-next"
       type="button"
-      data-bs-target="#prom-products-carousel"
+      [attr.data-bs-target]="'#'+id_carousel + '-carousel'"
       data-bs-slide="next"
     >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>

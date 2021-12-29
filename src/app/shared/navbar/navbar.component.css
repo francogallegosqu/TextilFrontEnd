@@ -8,12 +8,13 @@
   background-color: white;
 }
 
-.shadow {
-  box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.2);
+.navbar-shadow {
+  box-shadow: 0 0 4px 0 rgb(97 67 63 / 20%), 0 1px 1px 0 rgb(97 67 63 / 12%),
+    0 1px 1px 0 rgb(97 67 63 / 14%) !important;
 }
 
 .nav-text:hover {
-  color: #f2357b !important;
+  color: var(--primary) !important;
 }
 
 .nav-item {
@@ -36,9 +37,10 @@
 }
 
 .navbar-register-btn {
-  background-color: #f2357b;
+  background-color: var(--complementary);
   border-color: transparent;
-  color: #fff !important;
+  font-weight: 500;
+  color: white !important;
 }
 
 .profile-icon {
@@ -50,7 +52,16 @@
   color: #1e1f20;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
+  .container-fluid {
+    padding: 0.8rem 9%;
+  }
+}
+
+@media (max-width: 766px) {
+  .container-fluid {
+    padding: 0.8rem 13%;
+  }
   .navbar-nav > li {
     margin: 0.2rem 0;
   }

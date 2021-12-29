@@ -11,6 +11,7 @@ export class CarouselComponent implements OnInit {
    * Custom Properties
    */
   @Input() items: ICarouselItem[] = [];
+  @Input() id_carousel: string = 'testimonial';
 
   /**
    * Final Properties

@@ -4,7 +4,7 @@
 
 .category {
   display: inline-block;
-  color: #086a9b !important;
+  color: var(--primary) !important;
   font-size: 0.85rem;
   padding: 0.2rem 0.6rem !important;
   border-radius: 8px;
@@ -26,7 +26,7 @@
 .btn {
   margin: 3% 0;
   border: none;
-  background-color: #f2357b;
+  background-color: var(--complementary);
 }
 
 @media (max-width: 768px) {

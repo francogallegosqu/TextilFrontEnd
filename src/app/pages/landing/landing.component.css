@@ -8,14 +8,14 @@ section {
 }
 
 .title {
-  color: #086a9b;
+  color: var(--primary);
   text-align: center;
 }
 
 /* Hero section */
 #hero {
   padding-top: 0;
-  color: #086a9b !important;
+  color: var(--primary) !important;
 }
 
 #hero .container-fluid {
@@ -54,10 +54,10 @@ section {
 .hero-register-btn {
   font-weight: 500;
   border-radius: 8px;
-  background-color: #f2357b;
+  background-color: var(--complementary);
   border: none;
   padding: 0.75rem 1rem 0.75rem 0.8rem;
-  color: #fff !important;
+  color: white !important;
 }
 
 /* products section */
@@ -68,7 +68,7 @@ section {
 
 #products .nav-pills button.active {
   color: white;
-  background-color: #f2357b !important;
+  background-color: var(--complementary) !important;
   font-size: 16px;
 }
 
@@ -127,7 +127,7 @@ section {
 }
 
 .about-icon {
-  color: #086a9b;
+  color: var(--primary);
   margin-bottom: 1rem;
 }
 
@@ -142,7 +142,7 @@ section {
   position: absolute;
   height: 65%;
   width: 4px;
-  background: #086a9b;
+  background: var(--primary);
   left: 50%;
   top: 20px;
   transform: translateX(-50%);
@@ -152,7 +152,7 @@ section {
   position: absolute;
   height: 72%;
   width: 4px;
-  background: #086a9b;
+  background: var(--primary);
   left: 50%;
   top: 20px;
   transform: translateX(-50%);
@@ -190,7 +190,7 @@ section {
 }
 .timeline-row section .icon {
   position: absolute;
-  background: #086a9b;
+  background: var(--primary);
   height: 40px;
   width: 40px;
   text-align: center;
@@ -273,7 +273,7 @@ section {
 .title-testimonios {
   text-align: center;
   font-size: 36px;
-  color: #086a9b;
+  color: var(--primary);
 }
 
 .carousel-container {

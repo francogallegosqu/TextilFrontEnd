@@ -9,34 +9,17 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  myElement!: HTMLElement | null;
+ 
   loggedIn = false;
   faUserCircle = faUserCircle;
   name_user = 'Tilin';
   email_user = 'Tilin@eso.dale';
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private router: Router
+    private router: Router,
   ) {}
 
-  ngOnInit(): void {}
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.myElement = this.document.getElementById('nav');
-    if (
-      this.document.body.scrollTop > 22 ||
-      document.documentElement.scrollTop > 22
-    ) {
-      this.myElement?.classList.add('shadow');
-    } else {
-      this.myElement?.classList.remove('shadow');
-    }
-  }
-
-  login() {
-    this.loggedIn = true;
+  ngOnInit(): void {
   }
 
   logout() {
