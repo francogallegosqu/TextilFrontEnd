@@ -1,7 +1,3 @@
-aside {
-    display: block;
-}
-
-.bd-sidebar {
-    grid-area: sidebar;
+.sidebar-link[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
 }

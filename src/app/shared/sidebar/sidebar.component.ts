@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCompass, faUser, faBell, faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
-import { faStoreAlt } from "@fortawesome/free-solid-svg-icons";
+import { faStoreAlt, faBullhorn, faPlusCircle, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +15,9 @@ export class SidebarComponent implements OnInit {
   faProveedores = faStoreAlt;
   faNotificaciones = faBell;
   faAyuda = faQuestionCircle;
-
+  faPublicar = faBullhorn;
+  faPublicaciones = faPlusCircle;
+  faChevronDown = faChevronDown;
   constructor() { }
 
   ngOnInit(): void {
