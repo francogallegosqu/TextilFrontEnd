@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarouselImgComponent } from './components/carousel-img/carousel-img.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -39,6 +41,7 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

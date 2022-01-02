@@ -1,4 +1,4 @@
-<div class="sticky-top" *ngIf="!loggedIn; else elseBlock">
+<div class="sticky-top" *ngIf="authService.isLoggedIn$ | async; else elseBlock">
   <nav class="navbar navbar-light navbar-expand-md navbar-shadow" id="nav">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">App logo</a>
@@ -9,38 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link fw-normal nav-text" href="#">Preguntas frecuentes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-normal nav-text" (click)="login()">Login temporal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navbar-login-btn" href="#" routerLink="auth/login">
-              Iniciar sesion
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="navbar-login-btn navbar-register-btn nav-link" routerLink="auth/register">
-              Registrate gratis
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-<ng-template #elseBlock>
-  <nav class="navbar sticky-top navbar-light navbar-expand-md navbar-shadow" id="nav">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">App logo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link fw-normal nav-text" href="#">Preguntas frecuentes</a>
+            <a class="nav-link fw-normal nav-text" href="#">Link 1</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link profile-btn dropdown-toggle" data-bs-toggle="dropdown" role="button"
@@ -66,8 +35,39 @@
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesion</a></li>
+              <li><a class="dropdown-item logout" (click)="logout()" >Cerrar Sesion</a></li>
             </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<ng-template #elseBlock>
+  <nav class="navbar sticky-top navbar-light navbar-expand-md navbar-shadow" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">App logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link fw-normal nav-text" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-normal nav-text" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navbar-login-btn" href="#" routerLink="auth/login">
+              Iniciar sesion
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-login-btn navbar-register-btn nav-link" routerLink="auth/register">
+              Registrate gratis
+            </a>
           </li>
         </ul>
       </div>
