@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/models/user';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-profile',

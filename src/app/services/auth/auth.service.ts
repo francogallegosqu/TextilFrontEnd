@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from '../models/user';
+import { User } from '../../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class AuthService {
     // return this.http.post(this.url, body);
     localStorage.setItem(environment.TOKEN_NAME, "123")  
     this._isLoggedIn$.next(true);
-    this.router.navigate(["/"])
+    this.router.navigate(["home"])
   }
 
   isLoggedIn() {
@@ -41,6 +41,6 @@ export class AuthService {
   register(user: User) {
     localStorage.setItem(environment.TOKEN_NAME, "123")  
     this._isLoggedIn$.next(true);
-    this.router.navigate(["/"])
+    this.router.navigate(["home"])
   }
 }
