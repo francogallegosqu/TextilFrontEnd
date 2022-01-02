@@ -120,6 +120,10 @@
   display: none;
 }
 
+.logout:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   /* El menu dropdown se muestra automaticamente y el btn-profile se oculta */
   .dropdown .dropdown-menu {

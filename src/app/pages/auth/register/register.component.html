@@ -7,33 +7,38 @@
             </div>
         </div>
         <div class="row justify-content-center mt-3">
-            <form action="" class="p-0">
+            <form [formGroup]="form" (ngSubmit)="register()" class="p-0">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="RUC de tu empresa">
+                    <input formControlName="ruc" type="text" class="form-control" id="floatingInput"
+                        placeholder="RUC de tu empresa">
                     <label for="floatingInput">RUC de tu empresa</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Razón social">
+                    <input formControlName="businessName" type="text" class="form-control" id="floatingInput"
+                        placeholder="Razón social">
                     <label for="floatingInput">Razón social</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Correo">
+                    <input formControlName="email" type="email" class="form-control" id="floatingInput"
+                        placeholder="Correo">
                     <label for="floatingInput">Correo</label>
                 </div>
                 <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                    <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+                        placeholder="Contraseña">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <p class="text-secondary">Tu contraseña debe contener <br> mínimo 6 caracteres, una letra y un
                     número
                 </p>
+                <button class="mt-4 btn continue-btn d-block mx-auto" type="submit"
+                    [disabled]="form.invalid">Continuar</button>
             </form>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-4 mb-2">
             <div class="col-auto">
-                <button class="mt-3 btn continue-btn d-block mx-auto" type="submit">Continuar</button>
-                <br>
-                <span class="mt-3 mb-2">¿Ya tienes una cuenta? <a href="">Iniciar Sesion</a></span>
+                <span class="mt-3 mb-2">¿Ya tienes una cuenta? <a [routerLink]="['/auth/login']">Iniciar
+                        Sesion</a></span>
             </div>
         </div>
     </div>
