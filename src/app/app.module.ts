@@ -17,6 +17,7 @@ import { CarouselImgComponent } from './components/carousel-img/carousel-img.com
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChangeEmailComponent } from './pages/profile/change-email/change-email.component';
 
 
 
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     CarouselImgComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    ChangeEmailComponent
 
   ],
   imports: [

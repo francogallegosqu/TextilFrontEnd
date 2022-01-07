@@ -12,6 +12,7 @@
     </ul> -->
 
     <div class="container-fluid my-data-container">
+
         <h1 class="title">Mis Datos</h1>
 
         <div class="row subtitle-row">
@@ -19,7 +20,8 @@
                 <h2 class="subtitle">Datos de cuenta</h2>
             </div>
             <div class="col help-column">
-                <button class="help-btn" [routerLink]="['/profile']">Necesito ayuda</button>
+                <button class="help-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrollingOne"
+                    aria-controls="offcanvasScrollingOne">Necesito ayuda</button>
             </div>
         </div>
         <div class="rows-container">
@@ -35,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-2 action-column">
-                    <a class="arrow-btn" [routerLink]="['/profile']">
+                    <a class="arrow-btn" [routerLink]="['changeEmail']">
                         <fa-icon [icon]="faChevronRight"></fa-icon>
                     </a>
                 </div>
@@ -64,7 +66,8 @@
                 <h2 class="subtitle">Datos personales</h2>
             </div>
             <div class="col help-column">
-                <button class="help-btn" [routerLink]="['/profile']">Necesito ayuda</button>
+                <button class="help-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrollingTwo"
+                    aria-controls="offcanvasScrollingTwo">Necesito ayuda</button>
             </div>
         </div>
 
@@ -110,7 +113,8 @@
                 <h2 class="subtitle">Empleados</h2>
             </div>
             <div class="col help-column">
-                <button class="help-btn" [routerLink]="['/profile']">Necesito ayuda</button>
+                <button class="help-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrollingThree"
+                    aria-controls="offcanvasScrollingThree">Necesito ayuda</button>
             </div>
         </div>
         <div class="rows-container">
@@ -132,6 +136,44 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrollingOne" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Ayuda con los datos de mi cuenta</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nemo velit cum animi dignissimos
+                    repudiandae exercitationem odio rerum magnam earum.</p>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrollingTwo" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Ayuda con mis datos personales</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eligendi dolores sed sapiente deserunt
+                    repellat, accusantium vel natus quibusdam doloribus.</p>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrollingThree" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Ayuda con mis empleados</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed assumenda in non, perferendis adipisci
+                    quos distinctio ab quasi omnis commodi!</p>
             </div>
         </div>
 
