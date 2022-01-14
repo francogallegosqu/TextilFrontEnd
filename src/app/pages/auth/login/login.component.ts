@@ -9,18 +9,21 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   user!: string;
   password!: string;
   message!: string;
   error!: string;
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.form = this.fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
-    })
+    });
   }
 
   ngOnInit(): void {}
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
     let user = {
       email: this.form.value.email,
       password: this.form.value.password,
-    }
-    this.authService.login(user.email, user.password);
+    };
+    this.authService.login(user.email, user.password).subscribe();
   }
 }
