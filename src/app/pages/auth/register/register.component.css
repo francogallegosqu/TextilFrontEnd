@@ -1,5 +1,5 @@
 #register {
-  padding-bottom: 150px;
+  padding-bottom: 95px;
 }
 
 form {
@@ -20,4 +20,8 @@ label {
   width: 100%;
   max-width: 229px;
   height: 48px;
+}
+
+.second-step-container {
+  padding-bottom: 183px;
 }

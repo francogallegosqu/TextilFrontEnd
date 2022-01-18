@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  HOST: 'localhost:',
+  HOST: 'https://textilback.herokuapp.com/api',
   TOKEN_NAME: 'access_token',
   RETRIES: 2,
 };
