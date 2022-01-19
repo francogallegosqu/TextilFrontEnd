@@ -20,6 +20,15 @@ export class AuthService {
     this._isLoggedIn$.next(!!token);
   }
 
+  public getUser() : User | null
+  {
+    let user = localStorage.getItem('user');
+    if (user != null)
+      return JSON.parse(user) as User;
+    
+    return null;
+  }
+
   login(username: string, password: string): Observable<any> {
     const userReq: JSON = <JSON>(<unknown>{
       usernameOrEmail: username,
@@ -31,7 +40,7 @@ export class AuthService {
       tap((res: any) => {
         if (res) {
           localStorage.setItem(environment.TOKEN_NAME, res.jwt);
-          localStorage.setItem('user', res.user);
+          localStorage.setItem('user', JSON.stringify(res.user));
           this._isLoggedIn$.next(true);
           this.router.navigate(['home']);
         }
