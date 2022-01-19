@@ -1,6 +1,8 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserType } from 'src/app/models/user-type';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,74 +11,19 @@ export class UserService {
 
   users: User[] = [
     {
-      id: 1,
-      email: "diego@gmail.com",
+      id: 4,
+      email: "summer@gmail.com",
       password: "password",
-      userType: UserType.Master,
-      businessName: "Diego Johnson",
-      document: "72212167",
-      employyes: [
-        {
-          id: 2,
-          email: "anibal@gmail.com",
-          password: "password",
-          userType: UserType.Employee,
-          businessName: "Anibal Ludena",
-          document: "72212167",
-        },
-        {
-          id: 3,
-          email: "ashlyn@gmail.com",
-          password: "password",
-          userType: UserType.Employee,
-          businessName: "Ashlyn Demrest",
-          document: "72212167",
-        },
-        {
-          id: 4,
-          email: "summer@gmail.com",
-          password: "password",
-          userType: UserType.Employee,
-          businessName: "Summer Dawn",
-          document: "72212167",
+      idRole: "",
+      businessName: "Summer Dawn",
+      number_document: "72212167",
+      type_document: "dni",
+      address: "asd",
+      idCity: "asdasd"
         }
-      ],
-    },
-    {
-      id: 4,
-      email: "summer@gmail.com",
-      password: "password",
-      userType: UserType.Employee,
-      businessName: "Summer Dawn",
-      document: "72212167",
-    },
-    {
-      id: 2,
-      email: "anibal@gmail.com",
-      password: "password",
-      userType: UserType.Employee,
-      businessName: "Anibal Ludena",
-      document: "72212167",
-    },
-    {
-      id: 3,
-      email: "ashlyn@gmail.com",
-      password: "password",
-      userType: UserType.Employee,
-      businessName: "Ashlyn Demrest",
-      document: "72212167",
-    },
-    {
-      id: 4,
-      email: "summer@gmail.com",
-      password: "password",
-      userType: UserType.Employee,
-      businessName: "Summer Dawn",
-      document: "72212167",
-    }
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllUsers() : User[] {
     return this.users;
@@ -84,5 +31,14 @@ export class UserService {
 
   getUserById(id: number): User {
     return this.users.filter(user => user.id == id)[0];
+  }
+
+  getAllRoles(){
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("page", 0)
+                             .append("size", 15)
+                             .append("sortDir", "asc")
+                             .append("sort", "idRole");
+    return this.http.get(`${environment.HOST}/roles`, {params: queryParams});
   }
 }

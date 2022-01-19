@@ -1,5 +1,5 @@
 #register {
-  padding-bottom: 95px;
+  padding-bottom: 74px;
 }
 
 form {
@@ -23,5 +23,17 @@ label {
 }
 
 .second-step-container {
-  padding-bottom: 183px;
+  padding-bottom: 160px;
+}
+
+form .alert {
+  color: #e30425;
+  font-size: 0.74rem;
+  padding: 6px 0 0 7px;
+}
+
+.last-step-btn {
+  background: none;
+  border: none;
+  color: var(--complementary);
 }

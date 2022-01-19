@@ -1,11 +1,13 @@
 import { UserType } from "./user-type";
 
 export interface User {
-    id: number,
+    id?: number,
     email: string,
     password: string,
-    userType: UserType,
     businessName: string,
-    document: string,
-    employyes?: User[]
+    type_document: string,
+    number_document: string,
+    address: string,
+    idCity: string,
+    idRole: string;
 }
