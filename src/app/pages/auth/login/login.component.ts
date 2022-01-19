@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,9 +21,14 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
+    if (this.authService.isLoggedIn())
+    {
+      this.router.navigate(['home']);
+    }
+
     this.form = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
     });
   }
 

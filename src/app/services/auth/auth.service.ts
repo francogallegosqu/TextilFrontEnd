@@ -31,6 +31,7 @@ export class AuthService {
       tap((res: any) => {
         if (res) {
           localStorage.setItem(environment.TOKEN_NAME, res.jwt);
+          localStorage.setItem('user', res.user);
           this._isLoggedIn$.next(true);
           this.router.navigate(['home']);
         }
@@ -49,6 +50,7 @@ export class AuthService {
   logout() {
     this._isLoggedIn$.next(false);
     localStorage.removeItem(environment.TOKEN_NAME);
+    localStorage.removeItem('user');
     this.router.navigate(['auth/login']);
   }
 
