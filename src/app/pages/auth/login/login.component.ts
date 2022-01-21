@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   message!: string;
   error!: string;
   form: FormGroup;
+  showErrorLoginMessage : boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -30,15 +32,22 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+    this.showErrorLoginMessage = false;
   }
 
   ngOnInit(): void {}
 
   login() {
+    this.showErrorLoginMessage = false;
     let user = {
       email: this.form.value.email,
       password: this.form.value.password,
     };
-    this.authService.login(user.email, user.password).subscribe();
+    this.authService.login(user.email, user.password).subscribe({
+      error: () => {
+        this.showErrorLoginMessage = true;
+      },
+      complete: () => this.router.navigate(['home'])
+    });
   }
 }

@@ -37,12 +37,12 @@ export class AuthService {
 
     let body = userReq;
     return this.http.post(`${this.url}/signin`, body).pipe(
-      tap((res: any) => {
-        if (res) {
-          localStorage.setItem(environment.TOKEN_NAME, res.jwt);
-          localStorage.setItem('user', JSON.stringify(res.user));
+      tap((response: any) => {
+        if (response) {
+          
+          localStorage.setItem(environment.TOKEN_NAME, response.jwt);
+          localStorage.setItem('user', JSON.stringify(response.user));
           this._isLoggedIn$.next(true);
-          this.router.navigate(['home']);
         }
       })
     );
