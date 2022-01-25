@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first, timer } from 'rxjs';
-import { User } from 'src/app/models/user';
+import { RegisterUser } from 'src/app/dtos/register-user';
 import { UserType } from 'src/app/models/user-type';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { LocationService } from 'src/app/services/location/location.service';
@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
     this.loading = true;
     this.userService.getAllRoles().subscribe((data) => {
       this.roles = data;
-      let user: User = {
+      let user: RegisterUser = {
         email: this.formOne.value.email,
         password: this.formOne.value.password,
         businessName: this.formOne.value.businessName,

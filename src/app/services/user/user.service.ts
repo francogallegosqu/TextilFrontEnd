@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { UserType } from 'src/app/models/user-type';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,12 +13,12 @@ export class UserService {
       id: 4,
       email: "summer@gmail.com",
       password: "password",
-      idRole: "",
+      role: "",
       businessName: "Summer Dawn",
       number_document: "72212167",
       type_document: "dni",
       address: "asd",
-      idCity: "asdasd"
+      city: "asdasd"
         }
   ]
 
