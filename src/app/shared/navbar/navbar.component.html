@@ -12,17 +12,17 @@
             <a class="nav-link profile-btn dropdown-toggle" data-bs-toggle="dropdown" role="button"
               aria-expanded="false" href="#">
               <fa-icon [icon]="faUserCircle" class="profile-icon"></fa-icon>
-              {{name_user}}
+              {{ getUser()?.businessName }}
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <!-- <li >
                 <fa-icon [icon]="faUserCircle" class="user-icon fa-2x"></fa-icon>
-                <p class="user-menu-name">Hola {{ name_user }}</p>
-                <p class="user-menu-email">{{ email_user }}</p>
+                <!-- <p class="user-menu-name">Hola {{ getUser()?.businessName }}</p>
+                <p class="user-menu-name">{{ getUser()?.email }}</p>
               </li>
               <li>
                 <hr class="dropdown-divider" />
-              </li>
+              </li> -->
               <li>
                 <a class="dropdown-item" href="#" routerLink="profile">Perfil
                 </a>

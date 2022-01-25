@@ -1,16 +1,16 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../../models/user';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-
-  private url: string = '';
+  private url: string = 'https://textilback.herokuapp.com';
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
 
@@ -20,27 +20,52 @@ export class AuthService {
     this._isLoggedIn$.next(!!token);
   }
 
-  login(username: string, password: string) {
-    let body = ``;
-    // return this.http.post(this.url, body);
-    localStorage.setItem(environment.TOKEN_NAME, "123")  
-    this._isLoggedIn$.next(true);
-    this.router.navigate(["home"])
+  public getUser() : User | null
+  {
+    let user = localStorage.getItem('user');
+    if (user != null)
+      return JSON.parse(user) as User;
+    
+    return null;
   }
 
-  isLoggedIn() {
+  login(username: string, password: string): Observable<any> {
+    const userReq: JSON = <JSON>(<unknown>{
+      usernameOrEmail: username,
+      password: password,
+    });
+
+    let body = userReq;
+    return this.http.post(`${this.url}/signin`, body).pipe(
+      tap((response: any) => {
+        if (response) {
+          
+          localStorage.setItem(environment.TOKEN_NAME, response.jwt);
+          localStorage.setItem('user', JSON.stringify(response.user));
+          this._isLoggedIn$.next(true);
+        }
+      })
+    );
+  }
+
+  isLoggedIn(): boolean {
     let token = localStorage.getItem(environment.TOKEN_NAME);
+    if (!token) {
+      return false;
+    }
+    return true;
   }
 
   logout() {
-    this._isLoggedIn$.next(false)
+    this._isLoggedIn$.next(false);
     localStorage.removeItem(environment.TOKEN_NAME);
+    localStorage.removeItem('user');
     this.router.navigate(['auth/login']);
   }
 
   register(user: User) {
-    localStorage.setItem(environment.TOKEN_NAME, "123")  
+    localStorage.setItem(environment.TOKEN_NAME, '123');
     this._isLoggedIn$.next(true);
-    this.router.navigate(["home"])
+    this.router.navigate(['home']);
   }
 }
