@@ -64,8 +64,6 @@ export class AuthService {
   }
 
   register(user: User) {
-    localStorage.setItem(environment.TOKEN_NAME, '123');
-    this._isLoggedIn$.next(true);
-    this.router.navigate(['home']);
+    return this.http.post('https://textilback.herokuapp.com/signup', user);
   }
 }
