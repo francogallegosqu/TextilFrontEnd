@@ -118,8 +118,9 @@
             <div class="row justify-content-center mt-3 second-step-container">
                 <form [formGroup]="formTwo" (ngSubmit)="register()" class="p-0">
                     <div class="form-floating mb-3">
-                        <select formControlName="country" class="form-select" id="floatingSelectCountry">
-                            <option hidden selected disabled value="">Selecciona un País</option>
+                        <select formControlName="country" class="form-select" id="floatingSelectCountry"
+                            (change)="getStateCountry($event)">
+                            <option selected disabled value="">Selecciona un País</option>
                             <option *ngFor="let country of countries" [ngValue]="country.idCountry">
                                 {{country.nameCountry}}
                             </option>
@@ -131,8 +132,9 @@
                         <label for="floatingSelectCountry">País</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select formControlName="department" class="form-select" id="floatingSelectDepartment">
-                            <option hidden selected disabled value="">Selecciona un Departamento</option>
+                        <select formControlName="department" class="form-select" id="floatingSelectDepartment"
+                            (change)="getStateDepartment($event)">
+                            <option selected disabled value="">Selecciona un Departamento</option>
                             <option *ngFor="let department of departments" [ngValue]="department.idDepartment">
                                 {{department.nameDepartment}}
                             </option>
@@ -144,8 +146,9 @@
                         <label for="floatingSelectDepartment">Departamento</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select formControlName="city" class="form-select" id="floatingSelectCity">
-                            <option hidden selected disabled value="">Selecciona una Ciudad</option>
+                        <select formControlName="city" class="form-select" id="floatingSelectCity"
+                            (change)="getStateCity($event)">
+                            <option selected disabled value="">Selecciona una Ciudad</option>
                             <option *ngFor="let city of cities" [ngValue]="city.idCity">
                                 {{city.nameCity}}
                             </option>
@@ -155,6 +158,19 @@
                             <sup>*</sup>Debes seleccionar una Ciudad
                         </div>
                         <label for="floatingSelectCity">Ciudad</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select formControlName="district" class="form-select" id="floatingSelectDistrict">
+                            <option selected disabled value="">Selecciona un Distrito</option>
+                            <option *ngFor="let district of districts" [ngValue]="district.idDistrict">
+                                {{district.nameDistrict}}
+                            </option>
+                        </select>
+                        <div *ngIf="formTwo.controls['district'].touched && formTwo.controls['district'].hasError('required')"
+                            class="alert">
+                            <sup>*</sup>Debes seleccionar un Distrito
+                        </div>
+                        <label for="floatingSelectDistrict">Distrito</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input formControlName="address" type="text" class="form-control" id="floatingInputAddress"

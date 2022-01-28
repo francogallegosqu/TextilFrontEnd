@@ -6,6 +6,6 @@ export interface RegisterUser {
     type_document: string,
     number_document: string,
     address: string,
-    idCity: string,
+    idDistrict: string,
     idRole: string;
 }

@@ -22,19 +22,25 @@ export class RegisterComponent implements OnInit {
   roles!: any;
   departments: any;
   cities: any;
+  districts: any;
   step: number = 1;
   loading = false;
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
     private locationService: LocationService,
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router) {
-  
-   }
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
+
+    this.locationService.getCountries(0, 100).subscribe(data => {
+      this.countries = data;
+    });
+
     this.formOne = this.fb.group({
       documentType: ['', Validators.required],
       dni: ['',Validators.pattern('[0-9]{8}')],
@@ -45,36 +51,50 @@ export class RegisterComponent implements OnInit {
       password: ['',[ Validators.required, Validators.minLength(6)]],
     });
 
-    this.formOne.setValidators(this.requiredDniOrRUC)
-
     this.formTwo = this.fb.group({
       country: ['', Validators.required,],
       address: ['', Validators.required],
       department: ['', Validators.required],
-      city: ['', Validators.required]
+      city: ['', Validators.required],
+      district: ['', Validators.required]
     })
-    //TODO: Make loading data async for departments and cities once country and department has been selected
-   this.locationService.getCountries(0, 100).subscribe(data => {
-    this.countries = data;
-   });
-   this.locationService.getDepartmentsByCountryId("", 0, 100).subscribe(data =>{
-    this.departments = data;
-   });
-   this.locationService.getCitiesByDepartmentId("", 0, 100).subscribe(data => {
-     this.cities = data;
-   })
+
+    this.formOne.setValidators(this.requiredDniOrRUC)
   }
 
-  nextStep(){
-    this.step = this.step + 1;
+  getStateCountry(event: any){
+    let selectedCountryId = event.target.value.substring(3)
+    let selectedCountry = this.countries.filter(
+      (country: any) => country.idCountry === selectedCountryId);
+
+    selectedCountry = selectedCountry[0]
+    this.departments = selectedCountry.departaments
+    this.cities = []
+    this.districts = []
+  } 
+
+  getStateDepartment(event: any){
+    let selectedDepartmentId = event.target.value.substring(3)
+    let selectedDepartment = this.departments.filter(
+      (department: any) => department.idDepartment === selectedDepartmentId);
+    selectedDepartment = selectedDepartment[0]
+    this.cities = selectedDepartment.cities
+    this.districts = []
   }
 
-  lastStep(){
-    this.step = this.step - 1;
+  getStateCity(event: any){
+    let selectedCityId = event.target.value.substring(3)
+    let selectedCity = this.cities.filter(
+      (city: any) => city.idCity === selectedCityId);
+    selectedCity = selectedCity[0]
+    console.log(selectedCity)
+    this.districts = selectedCity.districts
   }
+
 
   register(){
     this.loading = true;
+
     this.userService.getAllRoles().subscribe((data) => {
       this.roles = data;
       let user: RegisterUser = {
@@ -84,7 +104,7 @@ export class RegisterComponent implements OnInit {
         type_document: this.formOne.value.documentType,
         number_document: this.formOne.value.documentType == 'ruc'  ? this.formOne.value.ruc : this.formOne.value.dni,
         address: this.formTwo.value.address,
-        idCity: this.formTwo.value.city,
+        idDistrict: this.formTwo.value.district,
         idRole: this.formOne.value.userType == 'buyer'  ? this.roles[1].idRole : this.roles[2].idRole
        };
 
@@ -109,6 +129,15 @@ export class RegisterComponent implements OnInit {
       }
       return null;
     } 
+  }
+
+  nextStep(){
+    this.step = this.step + 1;
+  }
+
+  lastStep()
+  {
+    this.step = this.step - 1;
   }
 
 }

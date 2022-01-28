@@ -1,7 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { environment } from 'src/environments/environment';
 
@@ -17,11 +17,13 @@ export class LoginComponent implements OnInit {
   error!: string;
   form: FormGroup;
   showErrorLoginMessage : boolean;
+  infoMessage = '';
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     if (this.authService.isLoggedIn())
     {
@@ -35,7 +37,14 @@ export class LoginComponent implements OnInit {
     this.showErrorLoginMessage = false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.queryParams
+    .subscribe(params => {
+      if(params['registered'] !== undefined && params['registered'] === 'true') {
+          this.infoMessage = '¡Registro Exitoso! Por favor Iniciar sesión';
+      }
+    });
+  }
 
   login() {
     this.showErrorLoginMessage = false;
