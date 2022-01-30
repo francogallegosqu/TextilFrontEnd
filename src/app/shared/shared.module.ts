@@ -5,27 +5,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AppRoutingModule } from '../app-routing.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
-    SidebarComponent,
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    AppRoutingModule,
+    RouterModule
   ],
   exports: [
     HttpClientModule,
     ReactiveFormsModule,
     NavbarComponent,
     FontAwesomeModule,
-    FooterComponent,
-    SidebarComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

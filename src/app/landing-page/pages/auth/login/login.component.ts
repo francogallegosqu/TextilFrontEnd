@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
       error: () => {
         this.showErrorLoginMessage = true;
       },
-      complete: () => this.router.navigate(['home'])
+      complete: () => this.router.navigate(['dashboard'])
     });
   }
 }

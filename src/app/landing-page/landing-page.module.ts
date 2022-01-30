@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { LandingPageComponent } from './landing-page.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { LoginComponent } from './pages/auth/login/login.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 
 @NgModule({
@@ -19,18 +20,13 @@ import { LoginComponent } from './pages/auth/login/login.component';
     CarouselImgComponent,
     CardComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LandingComponent
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule,
+    SharedModule,
     LandingPageRoutingModule,
-    SharedModule
-  ],
-  exports: [
-    CarouselComponent,
-    CarouselImgComponent,
-    CardComponent,
   ]
 })
 export class LandingPageModule { }

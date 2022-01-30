@@ -1,7 +1,7 @@
 <div class="sticky-top" *ngIf="authService.isLoggedIn$ | async; else elseBlock">
   <nav class="navbar navbar-light navbar-expand-md navbar-shadow" id="nav">
     <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="['/home']">App logo</a>
+      <a class="navbar-brand" [routerLink]="['dashboard']">App logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
                 <hr class="dropdown-divider" />
               </li> -->
               <li>
-                <a class="dropdown-item" href="#" routerLink="profile">Perfil
+                <a class="dropdown-item" href="#" routerLink="dashboard/user">Perfil
                 </a>
               </li>
               <li><a class="dropdown-item">Compras</a></li>
@@ -43,7 +43,7 @@
 <ng-template #elseBlock>
   <nav class="navbar sticky-top navbar-light navbar-expand-md navbar-shadow" id="nav">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">App logo</a>
+      <a class="navbar-brand" [routerLink]="['landing']">App logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
