@@ -1,0 +1,200 @@
+<app-carousel-img [items]="carousel_imgData" [id_carousel]="'top_img'"></app-carousel-img>
+<section id="hero">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 heading-left-column">
+                <h1 class="title display-4">
+                    Encuentra a tu próximo socio de negocios
+                </h1>
+                <label class="mt-3 subtitle h4">
+                    Somos una web respaldada por el BCP que busca ayudarte a encontrar
+                    proveedores y clientes manera
+                    <strong class="fw-bold">segura y gratuita.</strong>
+                </label>
+                <button type="button" class="hero-register-btn mt-3">
+                    Regístrate ahora <fa-icon [icon]="faSignInAlt"></fa-icon>
+                </button>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block heading-right-column">
+                <img class="hero-img"
+                    src="https://e7.pngegg.com/pngimages/639/452/png-clipart-computer-icons-avatar-user-profile-people-icon-child-face-thumbnail.png"
+                    alt="Smiling young man" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products section -->
+
+<section id="products">
+    <h2 class="title fw-bold">Lo nuevo en nombre</h2>
+
+    <ul class="nav nav-pills justify-content-center mt-5" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-products-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-products" type="button" role="tab" aria-controls="pills-products"
+                aria-selected="true">
+                Productos
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-orders-tab" data-bs-toggle="pill" data-bs-target="#pills-orders"
+                type="button" role="tab" aria-controls="pills-orders" aria-selected="false">
+                Pedidos
+            </button>
+        </li>
+    </ul>
+    <div class="container-fluid">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-products" role="tabpanel"
+                aria-labelledby="pills-products-tab">
+                <div class="row">
+                    <div class="col-lg-4 item-column col-md-12 d-flex align-items-center"
+                        *ngFor="let item of products.slice(0, 3)">
+                        <app-card [item]="item" [tipo]="'producto'"> </app-card>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
+                <div class="row">
+                    <div class="col-lg-4 item-column col-md-12 d-flex align-items-center"
+                        *ngFor="let item of orders.slice(0, 3)">
+                        <app-card [item]="item" [tipo]="'pedido'"> </app-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a class="view-more-btn" href="#"> Ver mas </a>
+        </div>
+    </div>
+</section>
+
+<!-- About section -->
+
+<section id="about">
+    <h2 class="title fw-bold">¿Cómo funciona?</h2>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 about-container">
+                <fa-icon [icon]="faCogs" class="fa-4x about-icon"></fa-icon>
+                <h1 class="about-title fw-bold">Si buscas proveedores</h1>
+                <div class="wrapper">
+                    <div class="center-line-left"></div>
+                    <div class="timeline-row timeline-row-1">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">1</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Registra tu negocio</span>
+                            </div>
+                            <p>Crea un perfil para que otros negocios puedan conocerte</p>
+                        </section>
+                    </div>
+                    <div class="timeline-row timeline-row-2">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">2</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Crea tu pedido</span>
+                            </div>
+                            <p>Registra el producto o servicio que estas buscando</p>
+                        </section>
+                    </div>
+                    <div class="timeline-row timeline-row-1">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">3</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Recibe alertas</span>
+                            </div>
+                            <p>
+                                Te notificaremos al encontrar los proveedores que mejor se
+                                adecuen a lo que necesitas
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 about-container">
+                <fa-icon [icon]="faHandshake" class="fa-4x about-icon"></fa-icon>
+                <h1 class="about-title fw-bold">Si buscas clientes</h1>
+
+                <div class="wrapper">
+                    <div class="center-line-right"></div>
+                    <div class="timeline-row timeline-row-1">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">1</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Registra tu negocio</span>
+                            </div>
+                            <p>Crea un perfil para que otros negocios puedan conocerte</p>
+                        </section>
+                    </div>
+                    <div class="timeline-row timeline-row-2">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">2</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Publica tus productos</span>
+                            </div>
+                            <p>Registra lo que ofreces a otros negocios</p>
+                        </section>
+                    </div>
+                    <div class="timeline-row timeline-row-1">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">3</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Recibe solicitudes</span>
+                            </div>
+                            <p>
+                                Encontraremos clientes que esten interesados en tus productos
+                                y/o servicios y te notificaremos
+                            </p>
+                        </section>
+                    </div>
+                    <div class="timeline-row timeline-row-2">
+                        <section>
+                            <span class="icon fa-stack">
+                                <strong class="fa-stack-1x">4</strong>
+                            </span>
+                            <div class="details">
+                                <span class="title">Responde los pedidos</span>
+                            </div>
+                            <p>
+                                Para que los clientes sepan que puedes atenderlos y se pongan en
+                                contacto contigo
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <div class="container-fluid">
+        <h1 class="title-testimonios">Testimonios</h1>
+        <p class="subtitle-testimonios">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, tempore?
+        </p>
+        <div class="row carousel-container">
+            <div class="col-12 mt-2">
+                <app-carousel [items]="carouselData"></app-carousel>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-carousel-img [items]="carousel_imgData" [id_carousel]="'bottom_imgs'"></app-carousel-img>

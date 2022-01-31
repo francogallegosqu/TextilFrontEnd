@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  HOST: 'https://textilback.herokuapp.com/api',
+  TOKEN_NAME: 'access_token',
+  RETRIES: 2,
 };
 
 /*

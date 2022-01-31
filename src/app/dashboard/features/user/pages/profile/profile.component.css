@@ -1,0 +1,85 @@
+.profile {
+  background-color: #eeeeee;
+  position: relative !important;
+  padding-bottom: 140px;
+}
+
+.my-data-container {
+  padding: 2.9rem 27% 0 27%;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.subtitle-row {
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.vertical-nav {
+  padding-top: 2.9rem;
+  position: fixed;
+}
+
+.rows-container {
+  margin-bottom: 36px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+}
+
+.rows-container .main-row {
+  border: 1px solid #eeeeee;
+  padding: 10px 14px;
+}
+
+.help-column {
+  margin: auto;
+  text-align: right;
+}
+
+.help-btn {
+  font-size: 0.7rem;
+  border: none;
+  color: #3483fa;
+}
+
+.help-btn:hover {
+  color: #03b;
+}
+
+.arrow-btn {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.field {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.value {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.action-column {
+  margin: auto 0;
+  text-align: right;
+}
+
+.offcanvas {
+  position: absolute;
+  z-index: 0;
+  width: 350px;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+}
+
+@media (max-width: 768px) {
+  .my-data-container {
+    padding: 2.9rem 20%;
+  }
+}

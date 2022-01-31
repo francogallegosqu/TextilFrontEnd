@@ -1,0 +1,93 @@
+<div class="d-flex flex-column align-items-center align-items-sm-start pt-2 px-3 min-vh-100">
+  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="menu">
+    <li class="nav-item mb-2 w-100">
+      <a href="#submenu-explorar" class="nav-link d-flex align-items-center align-items-sm-start px-0 sidebar-link"
+        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="submenu-explorar">
+        <fa-icon [icon]="faExplorar" class="fa-fw me-sm-3"></fa-icon>
+        <span class="d-none d-sm-inline-flex">Explorar</span>
+        <fa-icon [icon]="faChevronDown" class="d-none d-sm-inline-flex ms-auto right-icon"></fa-icon>
+      </a>
+
+      <ul class="collapse nav flex-column ms-2 ms-md-3" id="submenu-explorar" data-bs-parent="#menu">
+        <li class="w-100">
+          <a href="/" class="nav-link px-0"> <span class="d-none d-sm-inline">Opcion</span> 1</a>
+        </li>
+      </ul>
+    </li>
+
+
+    <li class="nav-item mb-2 w-100">
+      <a href="#submenu-publicar" class="nav-link d-flex align-items-center px-0 sidebar-link" data-bs-toggle="collapse"
+        role="button" aria-expanded="false" aria-controls="submenu-publicar">
+        <fa-icon [icon]="faPublicar" class="fa-fw me-sm-3"></fa-icon>
+        <span class="d-none d-sm-inline">Publicar</span>
+        <fa-icon [icon]="faChevronDown" class="d-none d-sm-inline-flex ms-auto right-icon"></fa-icon>
+      </a>
+
+      <ul class="collapse nav flex-column ms-2 ms-md-3" id="submenu-publicar" data-bs-parent="#menu">
+        <li class="w-100">
+          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Servicio</span>1</a>
+        </li>
+        <li>
+          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Insumo</span>2</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item mb-2 w-100">
+      <a href="/home" class="nav-link d-inline-flex align-items-center px-0">
+        <fa-icon [icon]="faProveedores" class="fa-fw me-sm-3"></fa-icon> <span class="d-none d-sm-inline">Mis
+          Proveedores</span>
+      </a>
+    </li>
+
+    <li class="nav-item mb-2 w-100">
+      <a href="#submenu-clientes" class="nav-link d-flex align-items-center px-0 sidebar-link" data-bs-toggle="collapse"
+        role="button" aria-expanded="false" aria-controls="submenu-clientes">
+        <fa-icon [icon]="faClientes" class="fa-fw me-sm-3"></fa-icon>
+        <span class="d-none d-sm-inline">Mis Clientes</span>
+        <fa-icon [icon]="faChevronDown" class="d-none d-sm-inline-flex ms-auto right-icon"></fa-icon>
+      </a>
+      <ul class="collapse nav flex-column ms-2 ms-md-3" id="submenu-clientes" data-bs-parent="#menu">
+        <li class="w-100">
+          <a href="/" class="nav-link px-0"> <span class="d-none d-sm-inline">Cliente</span> 1</a>
+        </li>
+        <li>
+          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Cliente</span> 2</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item mb-2 w-100">
+      <a href="#submenu-publicaciones" class="nav-link d-flex align-items-center px-0 sidebar-link"
+        data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="submenu-publicaciones">
+        <fa-icon [icon]="faPublicaciones" class="fa-fw me-sm-3"></fa-icon>
+        <span class="d-none d-sm-inline">Mis Publicaciones</span>
+        <fa-icon [icon]="faChevronDown" class="d-none d-sm-inline-flex ms-auto right-icon"></fa-icon>
+      </a>
+      <ul class="collapse nav flex-column ms-2 ms-md-3" id="submenu-publicaciones" data-bs-parent="#menu">
+        <li class="w-100">
+          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Publicacion</span> 1</a>
+        </li>
+        <li>
+          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Publicacion</span> 2</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item mb-2 w-100">
+      <a href="/home" class="nav-link d-inline-flex px-0 align-items-center">
+        <fa-icon [icon]="faNotificaciones" class="fa-fw me-sm-3"></fa-icon> <span
+          class="d-none d-sm-inline">Notificaciones</span>
+      </a>
+    </li>
+
+    <li class="nav-item mb-2 w-100">
+      <a href="/home" class="nav-link d-inline-flex align-items-center px-0">
+        <fa-icon [icon]="faAyuda" class="fa-fw me-sm-3"></fa-icon><span
+          class="text-align-center d-none d-sm-inline">Ayuda</span>
+      </a>
+    </li>
+
+  </ul>
+</div>

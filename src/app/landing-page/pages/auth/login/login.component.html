@@ -1,0 +1,58 @@
+<div id="login">
+    <div class="container py-5">
+        <div *ngIf="infoMessage.length > 0" class="alert alert-success" role="alert">
+            {{ infoMessage }}
+        </div>
+        <div class="login-card">
+            <div class="row justify-content-center">
+
+                <div class="col-auto text-center">
+                    <p class="mb-0 text-secondary">Hola</p>
+                    <h4 class="title fw-bold mb-4"> Bienvenido </h4>
+                    <p class="text-secondary mb-4"><strong class="text-black">Lorem ipsum dolor</strong> sit amet
+                        consectetur <br> adipisicing elit.
+                        Voluptatum!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <form [formGroup]="form" (ngSubmit)="login()" class="p-0">
+                    <div class="alert alert-danger" *ngIf="showErrorLoginMessage">
+                        <p class="m-0">Nombre de usuario y/o contraseña inválidos. Inténtalo de nuevo.</p>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Correo"
+                            formControlName="email">
+                        <label for="floatingInput">Correo</label>
+                    </div>
+
+                    <div class="alert alert-danger"
+                        *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+                        <p class="m-0" *ngIf="form.get('email')?.hasError('required')">El campo correo es requerido.</p>
+                        <p class="m-0" *ngIf="form.get('email')?.hasError('email')">El campo correo debe ser un correo
+                            valido.</p>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+                            placeholder="Contraseña">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+                        <p class="m-0" *ngIf="form.get('password')?.hasError('required')">El campo contraseña es
+                            requerido.</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <a [routerLink]="['/auth/login']" class="text-center">Olvide mi contraseña</a>
+                            <button class="mt-3 btn login-btn d-block mx-auto" type="submit"
+                                [disabled]="form.invalid">Ingresar</button>
+                            <p class="mt-3 mb-2 ">¿Aún no tienes una cuenta?</p>
+                            <a [routerLink]="['/auth/register']" class="text-center">Registrate</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

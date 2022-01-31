@@ -1,0 +1,43 @@
+#register {
+  padding-bottom: 74px;
+}
+
+form {
+  width: 288px;
+}
+
+a {
+  color: var(--complementary);
+}
+
+label {
+  color: #8095ac;
+}
+
+.alert-danger {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.continue-btn {
+  color: white;
+  background-color: var(--complementary);
+  width: 100%;
+  max-width: 229px;
+  height: 48px;
+}
+
+.second-step-container {
+  padding-bottom: 88px;
+}
+
+form .alert {
+  color: #e30425;
+  font-size: 0.74rem;
+  padding: 6px 0 0 7px;
+}
+
+.last-step-btn {
+  background: none;
+  border: none;
+  color: var(--complementary);
+}

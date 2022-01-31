@@ -1,0 +1,136 @@
+.container-fluid {
+  padding: 0.8rem 13%;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: white;
+}
+
+.navbar-shadow {
+  box-shadow: 0 0 4px 0 rgb(97 67 63 / 20%), 0 1px 1px 0 rgb(97 67 63 / 12%),
+    0 1px 1px 0 rgb(97 67 63 / 14%) !important;
+}
+
+.nav-text:hover {
+  color: var(--complementary) !important;
+}
+
+.nav-item {
+  margin: auto;
+}
+
+.nav-link {
+  color: #4e545c !important;
+  display: block;
+  padding: 0.4rem 0.7rem !important;
+}
+
+.navbar-login-btn {
+  background-color: transparent;
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #4e545c;
+}
+
+.navbar-register-btn {
+  background-color: var(--complementary);
+  border-color: transparent;
+  font-weight: 500;
+  color: white !important;
+}
+
+.profile-icon {
+  display: inline;
+  font-size: 1.2rem;
+}
+
+.profile-btn {
+  color: #1e1f20;
+}
+
+@media (max-width: 840px) {
+  .container-fluid {
+    padding: 0.8rem 9%;
+  }
+}
+
+@media (max-width: 766px) {
+  .container-fluid {
+    padding: 0.8rem 13%;
+  }
+  .navbar-nav > li {
+    margin: 0.2rem 0;
+  }
+  .navbar-login-btn {
+    margin-left: 0;
+  }
+  .nav-text {
+    padding-left: 0 !important;
+  }
+}
+
+/* DROPDOWN */
+
+.user-menu-name,
+.user-menu-email {
+  padding: 0;
+  margin: 0 6px 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-menu-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.user-menu-email {
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  user-select: text;
+}
+
+.user-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px 0 12px;
+  float: left;
+  white-space: nowrap;
+  line-height: 40px;
+}
+
+/* El menu dropdown se muestra cuando ocurre hover en lugar de dar click */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  min-width: 180px;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* El menu dropdown se muestra automaticamente y el btn-profile se oculta */
+  .dropdown .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .dropdown .profile-btn {
+    display: none;
+  }
+}
