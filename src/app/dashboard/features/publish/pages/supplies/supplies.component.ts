@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppliesComponent implements OnInit {
 
+  steps: number = 3;
+  currentStep: number = 1; 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onStep(step: number){
+    this.currentStep = this.currentStep + step
+  }
 }

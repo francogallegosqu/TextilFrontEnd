@@ -1,1 +1,5 @@
-<p>supplies works!</p>
+<app-stepper-header [steps]="steps" [currentStep]="currentStep"></app-stepper-header>
+<div class="stepper-content-container">
+    <!-- Add content for each step with ngIfs -->
+    <app-stepper-footer [steps]="steps" [currentStep]="currentStep" (onStep)="onStep($event)"></app-stepper-footer>
+</div>
