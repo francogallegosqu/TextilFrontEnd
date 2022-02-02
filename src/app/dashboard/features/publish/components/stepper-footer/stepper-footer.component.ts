@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, } from '@angular/core';
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-stepper-footer',
@@ -12,6 +13,10 @@ export class StepperFooterComponent implements OnInit, OnChanges {
   @Output() onStep =  new EventEmitter<number>();
   prevBtnVisibility = ''
   nextBtnVisibility = ''
+
+  /* ICONO */
+  faArrowRight = faArrowRight;
+  faArrowLeft = faArrowLeft;
   constructor() { }
  
 

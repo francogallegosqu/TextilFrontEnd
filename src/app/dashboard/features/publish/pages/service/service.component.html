@@ -1,5 +1,10 @@
 <app-stepper-header [steps]="steps" [currentStep]="currentStep"></app-stepper-header>
-<div class="stepper-content-container">
-    <!-- Add content for each step with ngIfs -->
-    <app-stepper-footer [steps]="steps" [currentStep]="currentStep" (onStep)="onStep($event)"></app-stepper-footer>
+<div class="stepper-content-container container d-flex flex-column">
+    <div>
+        content
+        <!-- Add content for each step with ngIfs -->    
+    </div>
+    <div class="mt-auto pb-2">
+        <app-stepper-footer [steps]="steps" [currentStep]="currentStep" (onStep)="onStep($event)"></app-stepper-footer>
+    </div>
 </div>
