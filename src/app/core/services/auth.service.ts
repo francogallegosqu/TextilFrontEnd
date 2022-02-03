@@ -29,6 +29,11 @@ export class AuthService {
     return null;
   }
 
+  public getToken() : string | null
+  {
+    return localStorage.getItem(environment.TOKEN_NAME);
+  }
+
   login(username: string, password: string): Observable<any> {
     const userReq: JSON = <JSON>(<unknown>{
       usernameOrEmail: username,
@@ -65,5 +70,14 @@ export class AuthService {
 
   register(user: User) {
     return this.http.post('https://textilback.herokuapp.com/signup', user);
+  }
+
+  addAuthorizationHeader(httpHeaders : HttpHeaders)
+  {
+    let token = this.getToken();
+    
+    if ( token != null ) return httpHeaders.append('Authorization', 'Bearer ' + token);
+    
+    return httpHeaders;
   }
 }
