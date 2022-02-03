@@ -26,10 +26,12 @@
 
       <ul class="collapse nav flex-column ms-2 ms-md-3" id="submenu-publicar" data-bs-parent="#menu">
         <li class="w-100">
-          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Servicio</span>1</a>
+          <a [routerLink]="['./publish/service']" class="nav-link px-0"> <span
+              class="d-none d-sm-inline">Servicio</span>1</a>
         </li>
         <li>
-          <a href="/home" class="nav-link px-0"> <span class="d-none d-sm-inline">Insumo</span>2</a>
+          <a [routerLink]="['./publish/supply']" class="nav-link px-0"> <span
+              class="d-none d-sm-inline">Insumo</span>2</a>
         </li>
       </ul>
     </li>

@@ -114,6 +114,7 @@
     <div *ngIf="currentStep == 4  && formStepOne.value.supplyType == supplyTypes[1]">
         <form [formGroup]="formFabricStepFour" class="py-4" (ngSubmit)="createSupply()">
             <div class="row">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Detalla los datos de tu tela</label>
                 <div class="col-md-6">
                     <label for="priceInput" class="form-label">¿Cual es el precio?</label>
                     <div class="input-group mb-3">

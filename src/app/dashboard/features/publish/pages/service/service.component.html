@@ -1,24 +1,26 @@
 <app-stepper-header [steps]="steps" [currentStep]="currentStep"></app-stepper-header>
 <div class="stepper-content-container container d-flex flex-column">
-    <div class="row justify-content-center mt-1">
-        <h1 class="mb-2 h4">Registro de Servicio</h1>
-        <form [formGroup]="form" (ngSubmit)="registerService()" class="p-0">
+    <div class="row justify-content-center ">
+        <form [formGroup]="form" (ngSubmit)="registerService()" class="py-4">
+            <label for="" class="form-label fs-5 fw-bold">¿Cuales son los datos de su Servicio?</label>
             <div class="alert alert-danger" *ngIf="showErrorServiceMessage">
                 <p class="m-0">Debe ingresar todos los datos.</p>
             </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingNameService" placeholder="Nombre Servicio" formControlName="nameService">
+            <div class="form-floating mb-3 mt-1">
+                <input type="text" class="form-control" id="floatingNameService" placeholder="Nombre Servicio"
+                    formControlName="nameService">
                 <label for="floatingNameService">Nombre de servicio</label>
             </div>
 
             <div class="alert alert-danger"
                 *ngIf="form.get('nameService')?.invalid && (form.get('nameService')?.dirty || form.get('nameService')?.touched)">
-                <p class="m-0" *ngIf="form.get('nameService')?.hasError('required')">El Nombre del servicio es requerido.</p>
+                <p class="m-0" *ngIf="form.get('nameService')?.hasError('required')">El Nombre del servicio es
+                    requerido.</p>
             </div>
 
             <div class="form-floating mb-2">
                 <textarea formControlName="descriptionService" class="form-control" id="floatingDescripcion"
-                placeholder="Contraseña"></textarea>
+                    placeholder="Contraseña"></textarea>
                 <label for="floatingDescripcion">Descripcion de servicio</label>
             </div>
             <div class="alert alert-danger"
@@ -35,6 +37,7 @@
         </form>
     </div>
     <div class="mt-auto pb-2">
-        <app-stepper-footer [steps]="steps" [currentStep]="currentStep" (onStep)="onStep($event)"></app-stepper-footer>
+        <app-stepper-footer [steps]="steps" [currentStep]="currentStep" [valid]="isValidForm()"
+            (onStep)="onStep($event)"></app-stepper-footer>
     </div>
 </div>

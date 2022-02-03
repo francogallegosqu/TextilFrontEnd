@@ -38,6 +38,10 @@ export class ServiceComponent implements OnInit {
     this.registerService();
   }
 
+  isValidForm(){
+    return this.form.invalid
+  }
+
   registerService() {
     this.showErrorServiceMessage = false;
     if (this.form.valid)

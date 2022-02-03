@@ -7,7 +7,7 @@ import { PublishComponent } from './publish.component';
 const routes: Routes = [
   {path: '', component: PublishComponent, children:[
    {path:'service', component: ServiceComponent},
-   {path:'supplies', component: SuppliesComponent}
+   {path:'supply', component: SuppliesComponent}
   ]}
 ];
 
