@@ -1,4 +1,8 @@
 <div class="stepper-footer-container container d-flex">
-    <button class="btn prev-btn d-inline-flex text-white" [style.visibility]="prevBtnVisibility" (click)="prev()"><fa-icon [icon]="faArrowLeft" class="me-1"></fa-icon>Anterior</button>
-    <button class="btn next-btn ms-auto d-inline-flex text-white" [style.visibility]="nextBtnVisibility" (click)="next()">Siguiente <fa-icon [icon]="faArrowRight" class="ms-1"></fa-icon></button>
+    <button class="btn prev-btn d-inline-flex text-white" [style.visibility]="prevBtnVisibility" (click)="prev()">
+        <fa-icon [icon]="faArrowLeft" class="me-1"></fa-icon>Anterior
+    </button>
+    <button class="btn next-btn ms-auto d-inline-flex text-white" [style.visibility]="nextBtnVisibility"
+        [disabled]="this.valid" (click)="next()">Siguiente <fa-icon [icon]="faArrowRight" class="ms-1"></fa-icon>
+    </button>
 </div>
