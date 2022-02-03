@@ -1,0 +1,16 @@
+<div class="stepper-footer-container container d-flex mb-2">
+    <button class="btn prev-btn d-inline-flex text-white" [style.visibility]="prevBtnVisibility" (click)="prev()">
+        <fa-icon [icon]="faArrowLeft" class="me-1"></fa-icon>Anterior
+    </button>
+    <ng-container *ngIf="lastStep == false else publishBtn">
+        <button class="btn next-btn ms-auto d-inline-flex text-white" [style.visibility]="nextBtnVisibility"
+            [disabled]="this.valid" (click)="next()">Siguiente <fa-icon [icon]="faArrowRight" class="ms-1"></fa-icon>
+        </button>
+    </ng-container>
+    <ng-template #publishBtn>
+        <button class="btn next-btn ms-auto d-inline-flex text-white" [disabled]="this.valid" (click)="next()">Publicar
+            Insumo <fa-icon [icon]="faCheck" class="ms-1">
+            </fa-icon>
+        </button>
+    </ng-template>
+</div>

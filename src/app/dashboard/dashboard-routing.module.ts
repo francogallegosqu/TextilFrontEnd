@@ -6,7 +6,8 @@ import { ProfileComponent } from './features/user/pages/profile/profile.componen
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, children:[
-    {path: 'user', loadChildren: () => import('./features/user/user.module').then(x => x.UserModule), canActivate: [UserGuard]}
+    {path: 'user', loadChildren: () => import('./features/user/user.module').then(x => x.UserModule), canActivate: [UserGuard]},
+    {path: 'publish', loadChildren: () => import('./features/publish/publish.module').then(x => x.PublishModule), canActivate: [UserGuard]}
   ]}
 ];
 

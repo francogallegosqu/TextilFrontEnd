@@ -1,0 +1,10 @@
+.publish-container {
+  width: 615px;
+  margin: auto;
+}
+
+@media (max-width: 765px) {
+  .publish-container {
+    width: 84%;
+  }
+}

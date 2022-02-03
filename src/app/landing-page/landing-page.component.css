@@ -16,6 +16,7 @@ section {
 #hero {
   padding-top: 0;
   color: var(--primary) !important;
+  z-index: 1000;
 }
 
 #hero .container-fluid {
@@ -46,7 +47,7 @@ section {
 .hero-img {
   width: 65%;
   position: absolute;
-  top: 25%;
+  top: 15%;
   right: 25%;
   border-radius: 50%;
 }
