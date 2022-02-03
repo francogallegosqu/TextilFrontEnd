@@ -10,6 +10,7 @@ export class StepperFooterComponent implements OnInit, OnChanges {
 
   @Input() steps!: number;
   @Input() currentStep!: number;
+  @Input() valid!: boolean;
   @Output() onStep =  new EventEmitter<number>();
   prevBtnVisibility = ''
   nextBtnVisibility = ''
@@ -45,5 +46,6 @@ export class StepperFooterComponent implements OnInit, OnChanges {
   prev(){
     this.onStep.emit(-1)
   }
+  
 
 }

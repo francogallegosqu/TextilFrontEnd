@@ -1,10 +1,175 @@
+<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{errorMessage}}
+</div>
+<div *ngIf="registered" class="alert alert-success" role="alert">
+    Accesorio Registrado Correctamente
+</div>
 <app-stepper-header [steps]="steps" [currentStep]="currentStep"></app-stepper-header>
 <div class="stepper-content-container container d-flex flex-column">
-    <div>
-        content
-        <!-- Add content for each step with ngIfs -->    
+
+    <div *ngIf="currentStep == 1">
+        <form action="" [formGroup]="formStepOne" class="py-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">¿Qué tipo de insumo quiere
+                    publicar?</label>
+                <select class="form-select mt-2" formControlName="supplyType">
+                    <option invalid value="">Seleccione tipo de insumo</option>
+                    <option *ngFor="let supplyType of supplyTypes" [ngValue]="supplyType">{{supplyType}}</option>
+                </select>
+            </div>
+        </form>
     </div>
+
+
+    <div *ngIf="currentStep == 2 && formStepOne.value.supplyType == supplyTypes[0]">
+        <form action="" [formGroup]="formAccessoryStepTwo" class="py-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Cuéntanos acerca de tu
+                    Accesorio</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    formControlName="accessoryName">
+                <label for="floatingInput">Ponle un titulo</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px" formControlName="accessoryDescription"></textarea>
+                <label for="floatingTextarea2">Descríbelo a detalle</label>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="currentStep == 3  && formStepOne.value.supplyType == supplyTypes[0]">
+        <form action="" [formGroup]="formAccessoryStepThree" class="py-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Haz que tu nuevo socio te
+                    encuentre</label>
+                <p>Elije una categoria que describa tu accesorio</p>
+                <select class="form-select mt-2" formControlName="accessoryCategory">
+                    <option invalid value="">Seleccione una categoria</option>
+                    <option *ngFor="let subCategory of subCategories" [ngValue]="subCategory.idSubCategory">
+                        {{subCategory.nameCategory}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="currentStep == 4  && formStepOne.value.supplyType == supplyTypes[0]">
+        <form [formGroup]="formAccessoryStepFour" class="py-4" (ngSubmit)="createSupply()">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="priceInput" class="form-label">¿Cual es el precio?</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">S./</span>
+                        <input type="number" class="form-control price-input" aria-label="Amount (to the nearest soles)"
+                            id="priceInput" formControlName="accessoryPrice">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="exampleColorInput" class="form-label">Elija el color de su accesorio</label>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                        title="Choose your color" formControlName="accessoryColor">
+                </div>
+            </div>
+            <!-- Change after merging with services -->
+            <button type="submit" [disabled]="formAccessoryStepFour.invalid"> Publicar Accesorio</button>
+        </form>
+    </div>
+
+
+    <div *ngIf="currentStep == 2  && formStepOne.value.supplyType == supplyTypes[1]">
+        <form action="" [formGroup]="formFabricStepTwo" class="py-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Cuéntanos acerca de tu
+                    Tela</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    formControlName="fabricName">
+                <label for="floatingInput">Ponle un titulo</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px" formControlName="fabricDescription"></textarea>
+                <label for="floatingTextarea2">Descríbelo a detalle</label>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="currentStep == 3  && formStepOne.value.supplyType == supplyTypes[1]">
+        <form action="" [formGroup]="formFabricStepThree" class="py-4">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Haz que tu nuevo socio te
+                    encuentre</label>
+                <p>Elije una categoria que describa tu tela</p>
+                <select class="form-select mt-2" formControlName="fabricCategory">
+                    <option invalid value="">Seleccione una categoria</option>
+                    <option *ngFor="let subCategory of subCategories" [ngValue]="subCategory.idSubCategory">
+                        {{subCategory.nameCategory}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="currentStep == 4  && formStepOne.value.supplyType == supplyTypes[1]">
+        <form [formGroup]="formFabricStepFour" class="py-4" (ngSubmit)="createSupply()">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="priceInput" class="form-label">¿Cual es el precio?</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">S./</span>
+                        <input type="number" class="form-control price-input" id="priceInput"
+                            formControlName="fabricPrice">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="priceInput" class="form-label">¿Cual es la tension?</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="priceInput" formControlName="fabricTension">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="priceInput" class="form-label">¿Cual es el peso?</label>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control price-input" id="priceInput"
+                            formControlName="fabricMetersKg">
+                        <span class="input-group-text">kg/m2</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="priceInput" class="form-label">¿Cual es el ancho?</label>
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control price-input" id="priceInput"
+                            formControlName="fabricWidth">
+                        <span class="input-group-text">cm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleColorInput" class="form-label">Elije la composicion de tu tela</label>
+                <select class="form-select" formControlName="fabricComposition">
+                    <option invalid value="">Seleccione una Composicion</option>
+                    <option *ngFor="let composition of compositions" [ngValue]="composition.idComposition">
+                        {{composition.percentageComposition}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="exampleColorInput" class="form-label">Elija el color de su tela</label>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                        title="Choose your color" formControlName="fabricColor">
+                </div>
+            </div>
+            <button type="submit" [disabled]="formFabricStepFour.invalid"> Publicar Accesorio</button>
+        </form>
+    </div>
+
     <div class="mt-auto pb-2">
-        <app-stepper-footer [steps]="steps" [currentStep]="currentStep" (onStep)="onStep($event)"></app-stepper-footer>
+        <app-stepper-footer [steps]="steps" [currentStep]="currentStep" [valid]="activateNext()"
+            (onStep)="onStep($event)">
+        </app-stepper-footer>
     </div>
 </div>
