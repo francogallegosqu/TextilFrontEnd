@@ -18,7 +18,7 @@ export const CAROUSEL_DATA_ITEMS: CarouselItem[] = [
       trabajo: 'Proveedor de Telas',
     },
     frase:
-      '“Muy buena experiencia porque siempre es bueno trabajar con un cliente que tiene el respaldo del BCP”',
+      '“Buena experiencia porque siempre es bueno trabajar con un cliente que tiene el respaldo del BCP”',
     image: './assets/images/testimonial-2-img.jpg',
   },
   {
