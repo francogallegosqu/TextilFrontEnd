@@ -2,7 +2,7 @@
     {{errorMessage}}
 </div>
 <div *ngIf="registered" class="alert alert-success" role="alert">
-    Accesorio Registrado Correctamente
+    {{name}} Registrado Correctamente
 </div>
 <app-stepper-header [steps]="steps" [currentStep]="currentStep"></app-stepper-header>
 <div class="stepper-content-container container d-flex flex-column">
@@ -72,8 +72,6 @@
                         title="Choose your color" formControlName="accessoryColor">
                 </div>
             </div>
-            <!-- Change after merging with services -->
-            <button type="submit" [disabled]="formAccessoryStepFour.invalid"> Publicar Accesorio</button>
         </form>
     </div>
 
@@ -164,13 +162,12 @@
                         title="Choose your color" formControlName="fabricColor">
                 </div>
             </div>
-            <button type="submit" [disabled]="formFabricStepFour.invalid"> Publicar Accesorio</button>
         </form>
     </div>
 
     <div class="mt-auto pb-2">
         <app-stepper-footer [steps]="steps" [currentStep]="currentStep" [valid]="activateNext()"
-            (onStep)="onStep($event)">
+            (onStep)="onStep($event)" (onPublish)="createSupply()">
         </app-stepper-footer>
     </div>
 </div>

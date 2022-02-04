@@ -50,6 +50,11 @@ label {
   max-width: 229px;
   height: 48px;
 }
+form .alert {
+  color: #e30425;
+  font-size: 0.8rem;
+  padding: 6px 0 0 7px;
+}
 
 @media (max-width: 1200px) {
   #login {

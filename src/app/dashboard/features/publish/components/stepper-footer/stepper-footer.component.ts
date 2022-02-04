@@ -23,6 +23,7 @@ export class StepperFooterComponent implements OnInit, OnChanges {
   @Input() currentStep!: number;
   @Input() valid!: boolean;
   @Output() onStep = new EventEmitter<number>();
+  @Output() onPublish = new EventEmitter<void>();
   prevBtnVisibility = '';
   nextBtnVisibility = '';
   lastStep!: boolean;
@@ -41,23 +42,25 @@ export class StepperFooterComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.currentStep > 1) {
-      this.prevBtnVisibility = 'visible';
-      this.nextBtnVisibility = 'visible';
-      if (this.currentStep >= this.steps) {
-        this.nextBtnVisibility = 'hidden';
-        this.lastStep = true;
-      }
+    if (this.currentStep >= this.steps) {
+      this.nextBtnVisibility = 'hidden';
+      this.lastStep = true;
     } else {
       this.lastStep = false;
-      this.prevBtnVisibility = 'hidden';
-      this.nextBtnVisibility = 'visible';
+      if (this.currentStep > 1) {
+        this.prevBtnVisibility = 'visible';
+        this.nextBtnVisibility = 'visible';
+      } else {
+        this.lastStep = false;
+        this.prevBtnVisibility = 'hidden';
+        this.nextBtnVisibility = 'visible';
+      }
     }
-    console.log('last', this.lastStep);
-    console.log('current', this.currentStep);
-    console.log('steps', this.steps);
   }
 
+  publish() {
+    this.onPublish.emit();
+  }
   next() {
     this.onStep.emit(1);
   }
