@@ -17,31 +17,40 @@
             <div class="row justify-content-center">
                 <form [formGroup]="form" (ngSubmit)="login()" class="p-0">
                     <div class="alert alert-danger" *ngIf="showErrorLoginMessage">
-                        <p class="m-0">Nombre de usuario y/o contraseña inválidos. Inténtalo de nuevo.</p>
+                        <sup>*</sup>Nombre de usuario y/o contraseña inválidos. Inténtalo de nuevo.
                     </div>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="Correo"
                             formControlName="email">
                         <label for="floatingInput">Correo</label>
+                        <div
+                            *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+
+                            <div class="alert" *ngIf="form.get('email')?.hasError('required')"> <sup>*</sup>El campo
+                                correo
+                                es
+                                requerido.
+                            </div>
+                            <div class="alert" *ngIf="form.get('email')?.hasError('email')"> <sup>*</sup>El campo correo
+                                debe
+                                ser un correo
+                                valido.</div>
+                        </div>
                     </div>
 
-                    <div class="alert alert-danger"
-                        *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
-                        <p class="m-0" *ngIf="form.get('email')?.hasError('required')">El campo correo es requerido.</p>
-                        <p class="m-0" *ngIf="form.get('email')?.hasError('email')">El campo correo debe ser un correo
-                            valido.</p>
-                    </div>
+
 
                     <div class="form-floating mb-2">
                         <input formControlName="password" type="password" class="form-control" id="floatingPassword"
                             placeholder="Contraseña">
                         <label for="floatingPassword">Contraseña</label>
+                        <div
+                            *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
+                            <div *ngIf="form.get('password')?.hasError('required')" class="alert"> <sup>*</sup>El campo
+                                contraseña es requerido.</div>
+                        </div>
                     </div>
-                    <div class="alert alert-danger"
-                        *ngIf="form.get('password')?.invalid && (form.get('password')?.dirty || form.get('password')?.touched)">
-                        <p class="m-0" *ngIf="form.get('password')?.hasError('required')">El campo contraseña es
-                            requerido.</p>
-                    </div>
+
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <a [routerLink]="['/auth/login']" class="text-center">Olvide mi contraseña</a>

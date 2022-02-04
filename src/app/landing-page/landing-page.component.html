@@ -10,13 +10,13 @@
                     proveedores y clientes manera
                     <strong class="fw-bold">segura y gratuita.</strong>
                 </label>
-                <button type="button" class="hero-register-btn mt-3">
+                <button type="button" class="hero-register-btn mt-3" [routerLink]="['/auth/register']">
                     Regístrate ahora <fa-icon [icon]="faSignInAlt"></fa-icon>
                 </button>
             </div>
             <div class="col-lg-5 d-none d-lg-block heading-right-column">
                 <img class="hero-img"
-                    src="https://e7.pngegg.com/pngimages/639/452/png-clipart-computer-icons-avatar-user-profile-people-icon-child-face-thumbnail.png"
+                    src="https://images-ext-1.discordapp.net/external/hvWxYbPThOy8htDseQG9O3dZJWK81B15aOmAj7RrAR8/%3Fb%3D1%26k%3D20%26m%3D1154638503%26s%3D612x612%26w%3D0%26h%3DMTlb5fdMhTV3fR4Mu637-pXO0GgKPcqX27IYyOy1MuI%3D/https/media.istockphoto.com/vectors/fashion-design-concept-dressmakers-create-outfit-and-apparel-on-vector-id1154638503"
                     alt="Smiling young man" />
             </div>
         </div>
@@ -33,13 +33,13 @@
             <button class="nav-link active" id="pills-products-tab" data-bs-toggle="pill"
                 data-bs-target="#pills-products" type="button" role="tab" aria-controls="pills-products"
                 aria-selected="true">
-                Productos
+                Insumos
             </button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-orders-tab" data-bs-toggle="pill" data-bs-target="#pills-orders"
                 type="button" role="tab" aria-controls="pills-orders" aria-selected="false">
-                Pedidos
+                Servicios
             </button>
         </li>
     </ul>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="btn-container">
-            <a class="view-more-btn" href="#"> Ver mas </a>
+            <button class="view-more-btn" [routerLink]="['/auth/login']"> Ver mas </button>
         </div>
     </div>
 </section>
@@ -183,17 +183,6 @@
 
 <!-- Testimonials Section -->
 <section id="testimonials">
-    <div class="container-fluid">
-        <h1 class="title-testimonios">Testimonios</h1>
-        <p class="subtitle-testimonios">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, tempore?
-        </p>
-        <div class="row carousel-container">
-            <div class="col-12 mt-2">
-                <app-carousel [items]="carouselData"></app-carousel>
-            </div>
-        </div>
-    </div>
+    <h1 class="title-testimonios mb-0">Testimonios</h1>
+    <app-carousel [items]="carouselData"></app-carousel>
 </section>
-
-<app-carousel-img [items]="carousel_imgData" [id_carousel]="'bottom_imgs'"></app-carousel-img>

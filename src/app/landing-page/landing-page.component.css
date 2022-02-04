@@ -1,6 +1,8 @@
 section {
   position: relative;
-  padding-top: 120px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border: none;
 }
 
 .container-fluid {
@@ -14,6 +16,7 @@ section {
 
 /* Hero section */
 #hero {
+  padding-bottom: 30px;
   padding-top: 0;
   color: var(--primary) !important;
   z-index: 1000;
@@ -21,8 +24,6 @@ section {
 
 #hero .container-fluid {
   padding-bottom: 6%;
-  background: url("/assets/img/landing-header.png") repeat-x center bottom,
-    linear-gradient(180deg, #fff, #f4f8fc calc(100%), #fff calc(100%), #fff);
 }
 
 .heading-left-column {
@@ -45,10 +46,9 @@ section {
 }
 
 .hero-img {
-  width: 65%;
+  width: 90%;
   position: absolute;
-  top: 15%;
-  right: 25%;
+  top: 10%;
   border-radius: 50%;
 }
 
@@ -76,7 +76,7 @@ section {
 #products .container-fluid {
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 1%;
+  padding-bottom: 0;
 }
 
 #products .row {
@@ -88,11 +88,12 @@ section {
 }
 
 #products .btn-container {
-  margin-top: 80px;
+  margin-top: 60px;
   text-align: center;
 }
 
 .view-more-btn {
+  background-color: transparent;
   color: #2a2c2e !important;
   padding: 0.6rem 2.5rem !important;
   font-weight: 600;
@@ -106,13 +107,14 @@ section {
   #products .item-column {
     padding-top: 6%;
   }
-  #products .btn-container {
-    margin-top: 30px;
-  }
 }
 
 /* About section */
 
+#about {
+  background-color: #fff;
+  padding-bottom: 0;
+}
 #about .container-fluid {
   padding-bottom: 0;
 }
@@ -123,6 +125,7 @@ section {
 }
 
 .about-title {
+  color: #323436;
   font-weight: bold;
   margin-bottom: 40px;
 }
@@ -258,8 +261,8 @@ section {
 /* Testimonios Section */
 
 #testimonials {
+  background-color: #fff;
   padding-top: 0;
-  margin-bottom: 20px;
 }
 
 .title-testimonios,

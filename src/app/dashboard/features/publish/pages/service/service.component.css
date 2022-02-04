@@ -1,7 +1,7 @@
 .login-btn {
-    color: white;
-    background-color: var(--complementary);
-    width: 100%;
-    max-width: 229px;
-    height: 48px;
-  }
+  color: white;
+  background-color: var(--complementary);
+  width: 100%;
+  max-width: 229px;
+  height: 48px;
+}
