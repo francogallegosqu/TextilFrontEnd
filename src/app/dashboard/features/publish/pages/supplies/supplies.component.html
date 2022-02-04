@@ -58,6 +58,8 @@
     <div *ngIf="currentStep == 4  && formStepOne.value.supplyType == supplyTypes[0]">
         <form [formGroup]="formAccessoryStepFour" class="py-4" (ngSubmit)="createSupply()">
             <div class="row">
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Detalla los datos de tu
+                    accesorio</label>
                 <div class="col-md-6">
                     <label for="priceInput" class="form-label">¿Cual es el precio?</label>
                     <div class="input-group mb-3">
