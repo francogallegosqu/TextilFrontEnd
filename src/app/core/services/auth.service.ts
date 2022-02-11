@@ -14,23 +14,21 @@ export class AuthService {
   private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
 
+
   constructor(private http: HttpClient, private router: Router) {
     let token = localStorage.getItem(environment.TOKEN_NAME);
     //TODO: Check if token isn't expired before changing the state of the loggendIn observable
     this._isLoggedIn$.next(!!token);
   }
 
-  public getUser() : User | null
-  {
+  public getUser(): User | null {
     let user = localStorage.getItem('user');
-    if (user != null)
-      return JSON.parse(user) as User;
-    
+    if (user != null) return JSON.parse(user) as User;
+
     return null;
   }
 
-  public getToken() : string | null
-  {
+  public getToken(): string | null {
     return localStorage.getItem(environment.TOKEN_NAME);
   }
 
@@ -44,7 +42,6 @@ export class AuthService {
     return this.http.post(`${this.url}/signin`, body).pipe(
       tap((response: any) => {
         if (response) {
-          
           localStorage.setItem(environment.TOKEN_NAME, response.jwt);
           localStorage.setItem('user', JSON.stringify(response.user));
           this._isLoggedIn$.next(true);
@@ -53,12 +50,8 @@ export class AuthService {
     );
   }
 
-  isLoggedIn(): boolean {
-    let token = localStorage.getItem(environment.TOKEN_NAME);
-    if (!token) {
-      return false;
-    }
-    return true;
+  isLoggedIn(): Observable<boolean> {
+    return this.isLoggedIn$;
   }
 
   logout() {
@@ -72,12 +65,17 @@ export class AuthService {
     return this.http.post('https://textilback.herokuapp.com/signup', user);
   }
 
-  addAuthorizationHeader(httpHeaders : HttpHeaders)
-  {
+  addAuthorizationHeader(httpHeaders: HttpHeaders) {
     let token = this.getToken();
-    
-    if ( token != null ) return httpHeaders.append('Authorization', 'Bearer ' + token);
-    
+
+    if (token != null)
+      return httpHeaders.append('Authorization', 'Bearer ' + token);
+
     return httpHeaders;
   }
+
+  getRole() {
+    return this.getUser()!.role.role_name;
+  }
+
 }

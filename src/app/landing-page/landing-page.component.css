@@ -246,7 +246,7 @@ section {
     left: -60px;
   }
 }
-@media (max-width: 440px) {
+@media (max-width: 367px) {
   .wrapper .center-line-left,
   .wrapper .center-line-right,
   .timeline-row section::before,

@@ -5,6 +5,12 @@
 
 @media (max-width: 765px) {
   .publish-container {
-    width: 84%;
+    width: 88%;
+  }
+}
+
+@media (max-width: 665px) {
+  .publish-container {
+    width: 100%;
   }
 }

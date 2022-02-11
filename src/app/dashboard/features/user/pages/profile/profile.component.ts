@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/core/models/user';
 import { UserService } from 'src/app/core/services/user.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-profile',
@@ -16,10 +15,8 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-      this.user  = JSON.parse(localStorage.getItem('user')!);
+    this.user = JSON.parse(localStorage.getItem('user')!);
   }
 
-  loadUser() {
-  }
-    
+  loadUser() {}
 }
