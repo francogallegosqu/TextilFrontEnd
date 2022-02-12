@@ -39,12 +39,8 @@ export class ServicesService {
   }
 
   getAllServicesByUserId(userId: string) {
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem(environment.TOKEN_NAME)}`
-    })
 
-    return this.http.get(`${environment.HOST}/services/user/${userId}`, { headers: headers })
+    return this.http.get(`${environment.HOST}/services/user/${userId}`)
   }
 }
 

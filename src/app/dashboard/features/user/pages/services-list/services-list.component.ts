@@ -18,7 +18,6 @@ export class ServicesListComponent implements OnInit {
   ngOnInit(): void {
     this.servService.getAllServicesByUserId(this.authService.getUser()?.idUsuario!).subscribe(data => {
       this.services = data as Service[];
-      console.log(this.services)
     })
   }
 

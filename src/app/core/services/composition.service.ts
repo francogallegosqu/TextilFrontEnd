@@ -9,16 +9,13 @@ export class CompositionService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCompositions(){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem(environment.TOKEN_NAME)}`
-    })
+  getAllCompositions() {
+
     let queryParams = new HttpParams();
     queryParams = queryParams.append("page", 0)
-                             .append("size", 50)
-                             .append("sortDir", "asc")
-                             .append("sort", "percentageComposition");
-    return this.http.get(`${environment.HOST}/compositions`, {params: queryParams, headers: headers});
+      .append("size", 50)
+      .append("sortDir", "asc")
+      .append("sort", "percentageComposition");
+    return this.http.get(`${environment.HOST}/compositions`, { params: queryParams });
   }
 }
