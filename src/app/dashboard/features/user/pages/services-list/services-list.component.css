@@ -1,0 +1,40 @@
+.angle-down-icon {
+  color: var(--complementary);
+}
+
+.btn-primary {
+  background-color: var(--complementary);
+  border-color: var(--complementary);
+}
+
+.btn-primary:focus {
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  max-width: 18rem !important;
+  min-height: 190px !important;
+  position: relative;
+}
+
+.add-new-card .card-body {
+  border-radius: 8px;
+  margin: 10px;
+  border: dotted;
+  border-color: var(--primary);
+}
+
+.add-new-card fa-icon {
+  color: var(--complementary);
+}
+
+.more-btn-container {
+  width: 100%;
+  left: 0;
+  bottom: 10px;
+  position: absolute;
+}

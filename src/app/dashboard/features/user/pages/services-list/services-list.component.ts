@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { faAngleDown, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { ServicesService } from 'src/app/core/services/services.service';
+import { Service } from '../../models/service';
 
 @Component({
   selector: 'app-services-list',
@@ -7,11 +10,16 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./services-list.component.css']
 })
 export class ServicesListComponent implements OnInit {
-
-  constructor(private authService: AuthService) { }
+  faAngleDown = faAngleDown;
+  services!: Service[];
+  faCirclePlus = faPlusCircle
+  constructor(private authService: AuthService, private servService: ServicesService) { }
 
   ngOnInit(): void {
-    console.log(this.authService.getRole())
+    this.servService.getAllServicesByUserId(this.authService.getUser()?.idUsuario!).subscribe(data => {
+      this.services = data as Service[];
+      console.log(this.services)
+    })
   }
 
 }

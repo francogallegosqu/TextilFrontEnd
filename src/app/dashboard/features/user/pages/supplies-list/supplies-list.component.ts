@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { faAngleDown, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/core/models/user';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { SuppliesService } from 'src/app/core/services/supplies.service';
+import { Accessory } from '../../models/accessory';
+import { Fabric } from '../../models/fabric';
 
 @Component({
   selector: 'app-supplies-list',
@@ -9,10 +13,22 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class SuppliesListComponent implements OnInit {
   user!: User;
-  constructor(private authService: AuthService) {}
+  faAngleDown = faAngleDown;
+  fabrics!: Fabric[];
+  accessories!: Accessory[];
+  faCirclePlus = faPlusCircle
+
+  constructor(private authService: AuthService, private suppliesService: SuppliesService) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUser()!;
-    console.log(this.authService.getRole());
+    this.suppliesService.getAccessoriesByUserId(this.user.idUsuario!).subscribe(data => {
+      this.accessories = data as Accessory[];
+      console.log(this.accessories)
+    })
+    this.suppliesService.getFabricsByUserId(this.user.idUsuario!).subscribe(data => {
+      this.fabrics = data as Fabric[];
+      console.log(this.fabrics)
+    })
   }
 }

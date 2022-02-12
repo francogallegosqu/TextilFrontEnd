@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Item } from 'src/app/landing-page/models/item';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -30,9 +32,19 @@ export class ServicesService {
     },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) { }
 
   getAllOrders(): Item[] {
     return this.orders;
   }
+
+  getAllServicesByUserId(userId: string) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem(environment.TOKEN_NAME)}`
+    })
+
+    return this.http.get(`${environment.HOST}/services/user/${userId}`, { headers: headers })
+  }
 }
+
