@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/core/models/user';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { CategoryService } from 'src/app/core/services/category.service';
 import { CompositionService } from 'src/app/core/services/composition.service';
 import { SuppliesService } from 'src/app/core/services/supplies.service';
@@ -12,6 +14,7 @@ import { SuppliesService } from 'src/app/core/services/supplies.service';
 export class SuppliesComponent implements OnInit {
   steps: number = 4;
   currentStep: number = 1;
+  user!: User;
   supplyTypes = ['Accesorio', 'Tela'];
   formStepOne!: FormGroup;
   formAccessoryStepTwo!: FormGroup;
@@ -33,10 +36,14 @@ export class SuppliesComponent implements OnInit {
     private fb: FormBuilder,
     private categoryService: CategoryService,
     private supplyService: SuppliesService,
-    private compositionService: CompositionService
-  ) {}
+    private compositionService: CompositionService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+
+    this.user = this.authService.getUser()!;
+
     this.formStepOne = this.fb.group({
       supplyType: ['', [Validators.required]],
     });
@@ -120,11 +127,11 @@ export class SuppliesComponent implements OnInit {
     if (this.formStepOne.value.supplyType == 'Accesorio') {
       let accessory = {
         nameAccessory: this.formAccessoryStepTwo.value.accessoryName,
-        descriptionAccessory:
-          this.formAccessoryStepTwo.value.accessoryDescription,
+        descriptionAccessory: this.formAccessoryStepTwo.value.accessoryDescription,
         idSubcategory: this.formAccessoryStepThree.value.accessoryCategory,
-        priceAccessory: this.formAccessoryStepFour.value.accessoryPrice,
+        priceAccesory: this.formAccessoryStepFour.value.accessoryPrice,
         colorAccessory: this.formAccessoryStepFour.value.accessoryColor,
+        created_by: this.user.idUsuario
       };
       this.name = this.formAccessoryStepTwo.value.accessoryName;
       this.supplyService.postAccessory(accessory).subscribe({
@@ -148,6 +155,7 @@ export class SuppliesComponent implements OnInit {
         descriptionFabric: this.formFabricStepTwo.value.fabricDescription,
         tension: this.formFabricStepFour.value.fabricTension,
         idComposition: this.formFabricStepFour.value.fabricComposition,
+        created_by: this.user.idUsuario
       };
       this.name = this.formFabricStepTwo.value.fabricName;
       this.supplyService.postFabric(fabric).subscribe({

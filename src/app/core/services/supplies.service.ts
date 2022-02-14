@@ -8,23 +8,25 @@ import { environment } from 'src/environments/environment';
 export class SuppliesService {
 
   constructor(private http: HttpClient) {
-   }
+  }
 
-   postAccessory(accessory: any){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem(environment.TOKEN_NAME)}`
-    })
+  postAccessory(accessory: any) {
 
-    return this.http.post(`${environment.HOST}/accessories`, accessory, {headers: headers})
-   }
 
-   postFabric(fabric: any){
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem(environment.TOKEN_NAME)}`
-    })
+    return this.http.post(`${environment.HOST}/accessories`, accessory)
+  }
 
-    return this.http.post(`${environment.HOST}/fabrics`, fabric, {headers: headers})
-   }
+  postFabric(fabric: any) {
+
+
+    return this.http.post(`${environment.HOST}/fabrics`, fabric)
+  }
+
+  getFabricsByUserId(userId: string) {
+    return this.http.get(`${environment.HOST}/fabrics/user/${userId}`)
+  }
+
+  getAccessoriesByUserId(userId: string) {
+    return this.http.get(`${environment.HOST}/accessories/user/${userId}`)
+  }
 }

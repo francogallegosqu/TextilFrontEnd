@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   message!: string;
   error!: string;
   form: FormGroup;
-  showErrorLoginMessage : boolean;
+  showErrorLoginMessage: boolean;
   infoMessage = '';
 
   constructor(
@@ -23,9 +23,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    if (this.authService.isLoggedIn())
-    {
-      this.router.navigate(['home']);
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['dashboard']);
     }
 
     this.form = this.fb.group({
@@ -36,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams
-    .subscribe(params => {
-      if(params['registered'] !== undefined && params['registered'] === 'true') {
-          this.infoMessage = '¡Registro Exitoso! Por favor Iniciar sesión';
+    this.route.queryParams.subscribe((params) => {
+      if (
+        params['registered'] !== undefined &&
+        params['registered'] === 'true'
+      ) {
+        this.infoMessage = '¡Registro Exitoso! Por favor Iniciar sesión';
       }
     });
   }
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit {
       error: () => {
         this.showErrorLoginMessage = true;
       },
-      complete: () => this.router.navigate(['dashboard'])
+      complete: () => this.router.navigate(['dashboard']),
     });
   }
 }

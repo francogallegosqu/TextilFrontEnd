@@ -42,7 +42,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     private serviceService: ServicesService,
     @Inject(DOCUMENT) private document: Document,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();

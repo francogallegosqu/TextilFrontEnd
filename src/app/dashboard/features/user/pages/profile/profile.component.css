@@ -1,5 +1,4 @@
 .profile {
-  background-color: #eeeeee;
   position: relative !important;
   padding-bottom: 140px;
 }
@@ -23,7 +22,6 @@
 
 .vertical-nav {
   padding-top: 2.9rem;
-  position: fixed;
 }
 
 .rows-container {
@@ -34,7 +32,7 @@
 }
 
 .rows-container .main-row {
-  border: 1px solid #eeeeee;
+  border: 1px solid #f4f8fc;
   padding: 10px 14px;
 }
 
@@ -44,6 +42,7 @@
 }
 
 .help-btn {
+  background-color: #f4f8fc;
   font-size: 0.7rem;
   border: none;
   color: #3483fa;
@@ -71,15 +70,26 @@
 }
 
 .offcanvas {
-  position: absolute;
+  top: 67.17px;
   z-index: 0;
   width: 350px;
   border: none;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199.98px) {
   .my-data-container {
     padding: 2.9rem 20%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .my-data-container {
+    padding: 2.9rem 4%;
+  }
+}
+@media (max-width: 575.98px) {
+  .my-data-container {
+    padding: 2.9rem 0.5%;
   }
 }

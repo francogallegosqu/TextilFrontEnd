@@ -10,24 +10,23 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
- 
+
   loggedIn = false;
   faUserCircle = faUserCircle;
 
   constructor(
     private router: Router,
     public authService: AuthService
-  ) 
-  {}
+  ) { }
 
   ngOnInit(): void {
   }
-  
+
   logout() {
     this.authService.logout();
   }
 
-  getUser() : User | null {
+  getUser(): User | null {
     return this.authService.getUser();
   }
 }
