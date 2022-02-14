@@ -8,6 +8,8 @@ import { ChangeEmailComponent } from './pages/change-email/change-email.componen
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ServicesListComponent } from './pages/services-list/services-list.component';
 import { SuppliesListComponent } from './pages/supplies-list/supplies-list.component';
+import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
+import { SupplyDetailsComponent } from './pages/supply-details/supply-details.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { SuppliesListComponent } from './pages/supplies-list/supplies-list.compo
     ProfileComponent,
     ChangeEmailComponent,
     ServicesListComponent,
-    SuppliesListComponent
+    SuppliesListComponent,
+    ServiceDetailsComponent,
+    SupplyDetailsComponent
   ],
   imports: [
     CommonModule,
