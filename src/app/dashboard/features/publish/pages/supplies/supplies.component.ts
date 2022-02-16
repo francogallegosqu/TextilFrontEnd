@@ -131,7 +131,8 @@ export class SuppliesComponent implements OnInit {
         idSubcategory: this.formAccessoryStepThree.value.accessoryCategory,
         priceAccesory: this.formAccessoryStepFour.value.accessoryPrice,
         colorAccessory: this.formAccessoryStepFour.value.accessoryColor,
-        created_by: this.user.idUsuario
+        created_by: this.user.idUsuario,
+        created_at: new Date().toString(),
       };
       this.name = this.formAccessoryStepTwo.value.accessoryName;
       this.supplyService.postAccessory(accessory).subscribe({
@@ -155,7 +156,8 @@ export class SuppliesComponent implements OnInit {
         descriptionFabric: this.formFabricStepTwo.value.fabricDescription,
         tension: this.formFabricStepFour.value.fabricTension,
         idComposition: this.formFabricStepFour.value.fabricComposition,
-        created_by: this.user.idUsuario
+        created_by: this.user.idUsuario,
+        created_at: new Date().toString(),
       };
       this.name = this.formFabricStepTwo.value.fabricName;
       this.supplyService.postFabric(fabric).subscribe({

@@ -1,11 +1,11 @@
-<ng-container *ngIf="service; else loading">
+<ng-container *ngIf="accessory; else loading">
     <div class="container-fuild py-2 px-4 header">
-        <a [routerLink]="['/dashboard/user/services']" class="d-block pt-2">
+        <a [routerLink]="['/dashboard/user/supplies']" class="d-block pt-2">
             <fa-icon [icon]="faArrowCircleLeft" class="return-icon"></fa-icon>
         </a>
         <nav class="navbar navbar-dark bg-light px-0 mt-4">
             <div class="container-fluid px-0">
-                <h1 class="title fs-4"> {{this.service.nameService}}</h1>
+                <h1 class="title fs-4"> {{this.accessory.nameAccessory}}</h1>
                 <form class="d-flex">
                     <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
                     <button class="btn btn-secondary btn-sm me-3">Eliminar Servicio</button>
@@ -14,9 +14,9 @@
             </div>
             <div class="container-fluid px-0">
                 <span></span>
-                <label class="date-created d-none d-lg-block">
-                    Creación <strong>{{ this.service.created_at.slice(0, 15)}}</strong>
-                </label>
+                <!-- <label class="date-created d-none d-lg-block">
+                    Creación <strong>{{ this.accessory.created_at.slice(0, 15)}}</strong>
+                </label> -->
             </div>
 
         </nav>
@@ -44,15 +44,38 @@
                         Carrusel de imágenes
                     </div>
                     <div class="col-9">
-                        <p>{{this.service.descriptionService}}</p>
+                        <p>{{this.accessory.descriptionAccessory}}</p>
                         <div class="row my-2">
                             <div class="col-12 col-lg-6">
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Categoría del Accesorio <br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span
+                                                class="fw-600 icon-text">{{this.accessory.subcategory.nameCategory}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="d-flex pt-2">
+                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
+                                    <div>
+                                        <span class="icon-text-title">Color<br></span>
+                                        <div class="flex-row">
+                                            <span class="fw-600 icon-text">{{this.accessory.colorAccessory}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="d-flex pt-2">
+                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
+                                    <div>
+                                        <span class="icon-text-title">Precio<br></span>
+                                        <div class="flex-row">
+                                            <span class="fw-600 icon-text">{{this.accessory.priceAccesory}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -60,50 +83,7 @@
                             <div class="col-12 col-lg-6">
 
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

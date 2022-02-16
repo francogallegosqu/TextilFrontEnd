@@ -21,7 +21,8 @@
                         <h5 class="fw-bold mb-1 fs-6 mt-1">{{service.nameService}}</h5>
                         <p class="card-text my-2 fs-6">{{service.descriptionService}}</p>
                         <div class="text-center more-btn-container">
-                            <button class="btn btn-primary">Ver Servicio</button>
+                            <button class="btn btn-primary" [routerLink]="['./', service.idService]">Ver
+                                Servicio</button>
                         </div>
                     </div>
 

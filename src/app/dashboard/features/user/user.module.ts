@@ -9,7 +9,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ServicesListComponent } from './pages/services-list/services-list.component';
 import { SuppliesListComponent } from './pages/supplies-list/supplies-list.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
-import { SupplyDetailsComponent } from './pages/supply-details/supply-details.component';
+import { FabricDetailsComponent } from './pages/fabric-details/fabric-details.component';
+import { AccessoryDetailsComponent } from './pages/accessory-details/accessory-details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SupplyDetailsComponent } from './pages/supply-details/supply-details.co
     ServicesListComponent,
     SuppliesListComponent,
     ServiceDetailsComponent,
-    SupplyDetailsComponent
+    FabricDetailsComponent,
+    AccessoryDetailsComponent,
   ],
   imports: [
     CommonModule,
