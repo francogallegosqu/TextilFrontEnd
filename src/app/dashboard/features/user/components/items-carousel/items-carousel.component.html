@@ -1,0 +1,40 @@
+<div class="container ms-3">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <div *ngFor="let image of images; let i = index;">
+                <ng-container *ngIf="i == 0; else elseButton">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" attr.data-bs-slide-to="{{i}}"
+                        class="active" aria-current="true" attr.aria-label="Slide {{i + 1}}"></button>
+                </ng-container>
+                <ng-template #elseButton>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" attr.data-bs-slide-to="{{i}}"
+                        aria-current="true" attr.aria-label="Slide {{i + 1}}"></button>
+                </ng-template>
+
+
+            </div>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!-- <img src="{{images[0]}}" class="d-block" alt="..."> -->
+                <div class="image" style="background-image: url({{images[0]}});">
+
+                </div>
+            </div>
+            <div *ngFor="let image of images.slice(1)" class="carousel-item">
+                <div class="image" style="background-image: url({{image}});">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>

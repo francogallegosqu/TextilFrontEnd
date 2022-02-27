@@ -41,3 +41,9 @@
 .add-new-card fa-icon {
   color: var(--complementary);
 }
+.more-btn-container {
+  width: 100%;
+  left: 0;
+  bottom: 10px;
+  position: absolute;
+}

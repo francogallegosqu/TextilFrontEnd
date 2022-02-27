@@ -14,11 +14,10 @@
             </div>
             <div class="container-fluid px-0">
                 <span></span>
-                <!-- <label class="date-created d-none d-lg-block">
+                <label *ngIf="fabric.created_at" class="date-created d-none d-lg-block">
                     Creación <strong>{{ this.fabric.created_at.slice(0, 15)}}</strong>
-                </label> -->
+                </label>
             </div>
-
         </nav>
     </div>
 
@@ -38,12 +37,12 @@
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
-            <div class="container py-4">
+            <div class="container ms-0 py-4">
                 <div class="row">
-                    <div class="col-3">
-                        Carrusel de imágenes
+                    <div class="col-4 carousel-col px-0">
+                        <app-items-carousel></app-items-carousel>
                     </div>
-                    <div class="col-9">
+                    <div class="col-8">
                         <p>{{this.fabric.descriptionFabric}}</p>
                         <div class="row my-2">
                             <div class="col-12 col-lg-6">

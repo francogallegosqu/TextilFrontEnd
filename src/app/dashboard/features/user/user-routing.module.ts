@@ -5,32 +5,12 @@ import { AccessoryDetailsComponent } from './pages/accessory-details/accessory-d
 import { FabricDetailsComponent } from './pages/fabric-details/fabric-details.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ServiceDetailsComponent } from './pages/service-details/service-details.component';
-import { ServicesListComponent } from './pages/services-list/services-list.component';
 import { SuppliesListComponent } from './pages/supplies-list/supplies-list.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      {
-        path: 'services', component: ServicesListComponent,
-        canActivate: [HasRoleGuard],
-        data: {
-          role: 'Vendedor'
-        },
-      },
-      {
-        path: 'services/:id', component: ServiceDetailsComponent, canActivate: [HasRoleGuard],
-        data: {
-          role: 'Vendedor'
-        },
-      },
-      {
-        path: 'services/:id', component: ServiceDetailsComponent, canActivate: [HasRoleGuard],
-        data: {
-          role: 'Vendedor'
-        },
-      },
       {
         path: 'supplies', component: SuppliesListComponent,
         canActivate: [HasRoleGuard],
@@ -46,6 +26,12 @@ const routes: Routes = [
       },
       {
         path: 'supplies/fabric/:id', component: FabricDetailsComponent, canActivate: [HasRoleGuard],
+        data: {
+          role: 'Vendedor'
+        },
+      },
+      {
+        path: 'supplies/services/:id', component: ServiceDetailsComponent, canActivate: [HasRoleGuard],
         data: {
           role: 'Vendedor'
         },

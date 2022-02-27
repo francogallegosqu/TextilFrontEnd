@@ -8,15 +8,15 @@
                 <h1 class="title fs-4"> {{this.accessory.nameAccessory}}</h1>
                 <form class="d-flex">
                     <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
-                    <button class="btn btn-secondary btn-sm me-3">Eliminar Servicio</button>
-                    <button class="btn btn-primary btn-sm me-3">Editar Servicio</button>
+                    <button class="btn btn-secondary btn-sm me-3">Eliminar Avio</button>
+                    <button class="btn btn-primary btn-sm me-3">Editar Avio</button>
                 </form>
             </div>
             <div class="container-fluid px-0">
                 <span></span>
-                <!-- <label class="date-created d-none d-lg-block">
+                <label *ngIf="accessory.created_at" class="date-created d-none d-lg-block">
                     Creación <strong>{{ this.accessory.created_at.slice(0, 15)}}</strong>
-                </label> -->
+                </label>
             </div>
 
         </nav>
@@ -38,19 +38,19 @@
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
-            <div class="container py-4">
+            <div class="container ms-0 py-4">
                 <div class="row">
-                    <div class="col-3">
-                        Carrusel de imágenes
+                    <div class="col-4 px-0">
+                        <app-items-carousel></app-items-carousel>
                     </div>
-                    <div class="col-9">
+                    <div class="col-8">
                         <p>{{this.accessory.descriptionAccessory}}</p>
                         <div class="row my-2">
                             <div class="col-12 col-lg-6">
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Categoría del Accesorio <br></span>
+                                        <span class="icon-text-title">Categoría del Avio <br></span>
                                         <div class="flex-row">
                                             <span
                                                 class="fw-600 icon-text">{{this.accessory.subcategory.nameCategory}}</span>

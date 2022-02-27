@@ -10,10 +10,10 @@
     <div *ngIf="currentStep == 1">
         <form action="" [formGroup]="formStepOne" class="py-4">
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">¿Qué tipo de insumo quiere
+                <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">¿Qué tipo de producto quiere
                     publicar?</label>
                 <select class="form-select mt-2" formControlName="supplyType">
-                    <option invalid value="">Seleccione tipo de insumo</option>
+                    <option invalid value="">Seleccione tipo de Producto</option>
                     <option *ngFor="let supplyType of supplyTypes" [ngValue]="supplyType">{{supplyType}}</option>
                 </select>
             </div>
@@ -25,7 +25,7 @@
         <form action="" [formGroup]="formAccessoryStepTwo" class="py-4">
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Cuéntanos acerca de tu
-                    Accesorio</label>
+                    Avio</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
@@ -45,7 +45,7 @@
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Haz que tu nuevo socio te
                     encuentre</label>
-                <p>Elije una categoria que describa tu accesorio</p>
+                <p>Elije una categoria que describa tu Avio</p>
                 <select class="form-select mt-2" formControlName="accessoryCategory">
                     <option invalid value="">Seleccione una categoria</option>
                     <option *ngFor="let subCategory of subCategories" [ngValue]="subCategory.idSubCategory">
@@ -59,7 +59,7 @@
         <form [formGroup]="formAccessoryStepFour" class="py-4" (ngSubmit)="createSupply()">
             <div class="row">
                 <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Detalla los datos de tu
-                    accesorio</label>
+                    Avio</label>
                 <div class="col-md-6">
                     <label for="priceInput" class="form-label">¿Cual es el precio?</label>
                     <div class="input-group mb-3">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label for="exampleColorInput" class="form-label">Elija el color de su accesorio</label>
+                    <label for="exampleColorInput" class="form-label">Elija el color de su Avio</label>
                     <input type="color" class="form-control form-control-color" id="exampleColorInput"
                         title="Choose your color" formControlName="accessoryColor">
                 </div>

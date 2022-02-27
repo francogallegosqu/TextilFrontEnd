@@ -15,7 +15,7 @@ export class SuppliesComponent implements OnInit {
   steps: number = 4;
   currentStep: number = 1;
   user!: User;
-  supplyTypes = ['Accesorio', 'Tela'];
+  supplyTypes = ['Avio', 'Tela'];
   formStepOne!: FormGroup;
   formAccessoryStepTwo!: FormGroup;
   formAccessoryStepThree!: FormGroup;
@@ -97,7 +97,7 @@ export class SuppliesComponent implements OnInit {
   activateNext(): boolean {
     if (this.currentStep == 1) {
       return this.formStepOne.invalid;
-    } else if (this.formStepOne.value.supplyType == 'Accesorio') {
+    } else if (this.formStepOne.value.supplyType == 'Avio') {
       if (this.currentStep == 2) {
         return this.formAccessoryStepTwo.invalid;
       }
@@ -124,7 +124,7 @@ export class SuppliesComponent implements OnInit {
   createSupply() {
     this.loading = true;
 
-    if (this.formStepOne.value.supplyType == 'Accesorio') {
+    if (this.formStepOne.value.supplyType == 'Avio') {
       let accessory = {
         nameAccessory: this.formAccessoryStepTwo.value.accessoryName,
         descriptionAccessory: this.formAccessoryStepTwo.value.accessoryDescription,
