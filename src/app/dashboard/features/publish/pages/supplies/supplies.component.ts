@@ -15,7 +15,7 @@ export class SuppliesComponent implements OnInit {
   steps: number = 4;
   currentStep: number = 1;
   user!: User;
-  supplyTypes = ['Accesorio', 'Tela'];
+  supplyTypes = ['Avio', 'Tela'];
   formStepOne!: FormGroup;
   formAccessoryStepTwo!: FormGroup;
   formAccessoryStepThree!: FormGroup;
@@ -97,7 +97,7 @@ export class SuppliesComponent implements OnInit {
   activateNext(): boolean {
     if (this.currentStep == 1) {
       return this.formStepOne.invalid;
-    } else if (this.formStepOne.value.supplyType == 'Accesorio') {
+    } else if (this.formStepOne.value.supplyType == 'Avio') {
       if (this.currentStep == 2) {
         return this.formAccessoryStepTwo.invalid;
       }
@@ -124,14 +124,15 @@ export class SuppliesComponent implements OnInit {
   createSupply() {
     this.loading = true;
 
-    if (this.formStepOne.value.supplyType == 'Accesorio') {
+    if (this.formStepOne.value.supplyType == 'Avio') {
       let accessory = {
         nameAccessory: this.formAccessoryStepTwo.value.accessoryName,
         descriptionAccessory: this.formAccessoryStepTwo.value.accessoryDescription,
         idSubcategory: this.formAccessoryStepThree.value.accessoryCategory,
         priceAccesory: this.formAccessoryStepFour.value.accessoryPrice,
         colorAccessory: this.formAccessoryStepFour.value.accessoryColor,
-        created_by: this.user.idUsuario
+        created_by: this.user.idUsuario,
+        created_at: new Date().toString(),
       };
       this.name = this.formAccessoryStepTwo.value.accessoryName;
       this.supplyService.postAccessory(accessory).subscribe({
@@ -155,7 +156,8 @@ export class SuppliesComponent implements OnInit {
         descriptionFabric: this.formFabricStepTwo.value.fabricDescription,
         tension: this.formFabricStepFour.value.fabricTension,
         idComposition: this.formFabricStepFour.value.fabricComposition,
-        created_by: this.user.idUsuario
+        created_by: this.user.idUsuario,
+        created_at: new Date().toString(),
       };
       this.name = this.formFabricStepTwo.value.fabricName;
       this.supplyService.postFabric(fabric).subscribe({

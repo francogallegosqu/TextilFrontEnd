@@ -1,11 +1,11 @@
-<ng-container *ngIf="service; else loading">
+<ng-container *ngIf="fabric; else loading">
     <div class="container-fuild py-2 px-4 header">
-        <a [routerLink]="['/dashboard/user/services']" class="d-block pt-2">
+        <a [routerLink]="['/dashboard/user/supplies']" class="d-block pt-2">
             <fa-icon [icon]="faArrowCircleLeft" class="return-icon"></fa-icon>
         </a>
         <nav class="navbar navbar-dark bg-light px-0 mt-4">
             <div class="container-fluid px-0">
-                <h1 class="title fs-4"> {{this.service.nameService}}</h1>
+                <h1 class="title fs-4"> {{this.fabric.nameFabric}}</h1>
                 <form class="d-flex">
                     <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
                     <button class="btn btn-secondary btn-sm me-3">Eliminar Servicio</button>
@@ -14,11 +14,10 @@
             </div>
             <div class="container-fluid px-0">
                 <span></span>
-                <label class="date-created d-none d-lg-block">
-                    Creación <strong>{{ this.service.created_at.slice(0, 15)}}</strong>
+                <label *ngIf="fabric.created_at" class="date-created d-none d-lg-block">
+                    Creación <strong>{{ this.fabric.created_at.slice(0, 15)}}</strong>
                 </label>
             </div>
-
         </nav>
     </div>
 
@@ -40,19 +39,20 @@
         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
             <div class="container ms-0 py-4">
                 <div class="row">
-                    <div class="col-4 px-0">
+                    <div class="col-4 carousel-col px-0">
                         <app-items-carousel></app-items-carousel>
                     </div>
                     <div class="col-8">
-                        <p>{{this.service.descriptionService}}</p>
+                        <p>{{this.fabric.descriptionFabric}}</p>
                         <div class="row my-2">
                             <div class="col-12 col-lg-6">
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Composicion de la Tela <br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span
+                                                class="fw-600 icon-text">{{this.fabric.composition.percentageComposition}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -64,9 +64,9 @@
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Ancho de la Tela <br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span class="fw-600 icon-text">{{this.fabric.widthFabric}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -75,9 +75,9 @@
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Color de la Tela<br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span class="fw-600 icon-text">{{this.fabric.colorFabric}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -86,9 +86,9 @@
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Metros x Kg<br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span class="fw-600 icon-text">{{this.fabric.meters_x_Kg}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -97,9 +97,20 @@
                                 <div class="d-flex pt-2">
                                     <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
                                     <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
+                                        <span class="icon-text-title">Tension<br></span>
                                         <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
+                                            <span class="fw-600 icon-text">{{this.fabric.tension}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="d-flex pt-2">
+                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
+                                    <div>
+                                        <span class="icon-text-title">Precio<br></span>
+                                        <div class="flex-row">
+                                            <span class="fw-600 icon-text">{{this.fabric.priceFabric}}</span>
                                         </div>
                                     </div>
                                 </div>

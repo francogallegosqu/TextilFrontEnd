@@ -39,8 +39,12 @@ export class ServicesService {
   }
 
   getAllServicesByUserId(userId: string) {
-
     return this.http.get(`${environment.HOST}/services/user/${userId}`)
   }
+
+  getServiceById(id: string) {
+    return this.http.get(`${environment.HOST}/services/${id}`)
+  }
+
 }
 

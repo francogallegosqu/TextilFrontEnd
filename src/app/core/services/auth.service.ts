@@ -94,4 +94,8 @@ export class AuthService {
     return this.getUser()!.role.role_name;
   }
 
+  tokenExpired(token: string) {
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
 }

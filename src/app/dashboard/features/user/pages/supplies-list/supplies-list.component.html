@@ -1,6 +1,6 @@
 <div class="container-md px-0">
-    <div class="title-container mt-2">
-        <h4 class="fw-bold text-center mb-0"> Mis Insumos </h4>
+    <div class="title-container mt-4">
+        <h4 class="fw-bold text-center mb-0"> Mis Publicaciones </h4>
         <fa-icon [icon]="faAngleDown" class="fa-2x angle-down-icon d-block text-center"></fa-icon>
     </div>
 
@@ -15,7 +15,13 @@
         <li class="nav-item ms-2" role="presentation">
             <button class="nav-link" id="pills-orders-tab" data-bs-toggle="pill" data-bs-target="#pills-orders"
                 type="button" role="tab" aria-controls="pills-orders" aria-selected="false">
-                Accesorios
+                Avio
+            </button>
+        </li>
+        <li class="nav-item ms-2" role="presentation">
+            <button class="nav-link" id="pills-services-tab" data-bs-toggle="pill" data-bs-target="#pills-services"
+                type="button" role="tab" aria-controls="pills-services" aria-selected="false">
+                Servicios
             </button>
         </li>
     </ul>
@@ -26,7 +32,7 @@
                     <div class="col">
                         <div class="card mx-auto add-new-card">
                             <div class="card-body text-center">
-                                <h4 class="fw-bold text-center fs-5"> Agregar Insumo </h4>
+                                <h4 class="fw-bold text-center fs-5"> Agregar Tela </h4>
                                 <a [routerLink]="['/dashboard/publish/supply']" class="d-block mt-3">
                                     <fa-icon [icon]="faCirclePlus" class="fa-3x add-icon"></fa-icon>
                                 </a>
@@ -40,7 +46,8 @@
                                 <p class="card-text my-2 fs-6">{{fabric.descriptionFabric}}</p>
                                 <p class="my-2">Precio <br> <strong>s/ {{fabric.priceFabric}}</strong></p>
                                 <div class="text-center">
-                                    <button href=" #" class="btn btn-primary">Ver tela</button>
+                                    <button [routerLink]="['./fabric', fabric.idFabric]" class="btn btn-primary">Ver
+                                        tela</button>
                                 </div>
                             </div>
 
@@ -55,7 +62,7 @@
                     <div class="col">
                         <div class="card mx-auto add-new-card">
                             <div class="card-body text-center">
-                                <h4 class="fw-bold text-center fs-5"> Agregar Insumo </h4>
+                                <h4 class="fw-bold text-center fs-5"> Agregar Avio </h4>
                                 <a [routerLink]="['/dashboard/publish/supply']" class="d-block mt-3">
                                     <fa-icon [icon]="faCirclePlus" class="fa-3x add-icon"></fa-icon>
                                 </a>
@@ -69,7 +76,38 @@
                                 <p class="card-text my-2 ">{{accessory.descriptionAccessory}}</p>
                                 <p class="my-2">Precio <br> <strong>s/ {{accessory.priceAccesory}}</strong></p>
                                 <div class="text-center">
-                                    <button href=" #" class="btn btn-primary">Ver Accesorio</button>
+                                    <button [routerLink]="['./accessory', accessory.idAccessory]"
+                                        class="btn btn-primary">Ver Avio</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="pills-services" role="tabpanel" aria-labelledby="pills-services-tab">
+            <div class="container px-4">
+                <div class="row  row-cols-1 row-cols-md-2  row-cols-lg-3 gx-5 gy-5">
+                    <div class="col">
+                        <div class="card mx-auto add-new-card">
+                            <div class="card-body text-center">
+                                <h4 class="fw-bold text-center fs-5"> Agregar Servicio </h4>
+                                <a [routerLink]="['/dashboard/publish/service']" class="d-block mt-3">
+                                    <fa-icon [icon]="faCirclePlus" class="fa-3x add-icon"></fa-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" *ngFor="let service of services">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-1 fs-6 mt-1">{{service.nameService}}</h5>
+                                <p class="card-text my-2 fs-6">{{service.descriptionService}}</p>
+                                <div class="text-center more-btn-container">
+                                    <button class="btn btn-primary" [routerLink]="['./services', service.idService]">Ver
+                                        Servicio</button>
                                 </div>
                             </div>
 

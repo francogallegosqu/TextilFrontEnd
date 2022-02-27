@@ -29,4 +29,11 @@ export class SuppliesService {
   getAccessoriesByUserId(userId: string) {
     return this.http.get(`${environment.HOST}/accessories/user/${userId}`)
   }
+
+  getFabricById(id: string) {
+    return this.http.get(`${environment.HOST}/fabrics/${id}`)
+  }
+  getAccessoryById(id: string) {
+    return this.http.get(`${environment.HOST}/accessories/${id}`)
+  }
 }

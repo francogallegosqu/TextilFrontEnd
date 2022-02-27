@@ -1,0 +1,19 @@
+.container {
+  background-color: #8295ac;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.carousel-indicators button {
+  background-color: #fff;
+}
+
+.image {
+  margin: 0 auto;
+  background-color: #fff;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  height: 355px;
+}
