@@ -1,0 +1,173 @@
+<div class="container px-0 my-4">
+    <div class="row justify-content-center">
+        <div class="col px-0">
+            <ng-container *ngIf="!loading && type == 'fabric'">
+                <div class="card pt-3">
+                    <div class="text-center">
+                        <p>Publicar Insumo</p>
+                        <h1>Editar Insumo</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Dolores, commodi.</p>
+                    </div>
+                    <div class="w-100 line mb-2"></div>
+                    <form class="p-4" [formGroup]="formFabric">
+                        <div class="row">
+                            <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Descripcion de la
+                                Tela</label>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                        formControlName="fabricName">
+                                    <label for="floatingInput">Ponle un titulo</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" formControlName="fabricComposition">
+                                    <label for="floatingInput">Composicion de la tela</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px"
+                                        formControlName="fabricDescription"></textarea>
+                                    <label for="floatingTextarea2">Descríbelo a detalle</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Detalla los datos de tu
+                                tela</label>
+                            <div class="col-md-6 mb-3">
+                                <label for="priceInput" class="form-label">¿Cual es el precio?</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">S./</span>
+                                    <input type="number" class="form-control price-input" id="priceInput"
+                                        formControlName="fabricPrice">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="priceInput" class="form-label">¿Cual es la tension?</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="priceInput"
+                                        formControlName="fabricTension">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="priceInput" class="form-label">¿Cual es el peso?</label>
+                                <div class="input-group mb-3">
+                                    <input type="number" class="form-control price-input" id="priceInput"
+                                        formControlName="fabricMetersKg">
+                                    <span class="input-group-text">kg/m2</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="priceInput" class="form-label">¿Cual es el ancho?</label>
+                                <div class="input-group mb-3">
+                                    <input type="number" class="form-control price-input" id="priceInput"
+                                        formControlName="fabricWidth">
+                                    <span class="input-group-text">cm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleColorInput" class="form-label">Elija el color de su tela</label>
+                                <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                                    title="Choose your color" formControlName="fabricColor">
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <div class="container d-flex mb-3">
+                            <button class="btn px-4 ms-4 d-inline-flex text-white" (click)="back()">
+                                Anterior
+                            </button>
+                            <button class="btn px-4 ms-auto me-4 d-inline-flex text-white"
+                                [disabled]="this.formFabric.invalid" (click)="edit()"> Editar Insumo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+            <!-- Accessory form -->
+            <ng-container *ngIf="!loading && type == 'accessory'">
+                <div class="card pt-3">
+                    <div class="text-center">
+                        <p>Publicar Insumo</p>
+                        <h1>Editar Insumo</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Dolores, commodi.</p>
+                    </div>
+                    <div class="w-100 line mb-2"></div>
+                    <form class="p-4" [formGroup]="formAccessory">
+                        <div class="row">
+                            <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Descripcion del
+                                Avio</label>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" formControlName="accessoryName">
+                                    <label for="floatingInput">Ponle un titulo</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select" formControlName="accessoryCategory">
+                                        <option *ngFor="let subCategory of subCategories"
+                                            [ngValue]="subCategory.idSubCategory" [selected]="accessory.subcategory">
+                                            {{subCategory.nameCategory}}
+                                        </option>
+                                    </select>
+                                    <label for="floatingSelect">Seleccione una categoria</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px"
+                                        formControlName="accessoryDescription"></textarea>
+                                    <label for="floatingTextarea2">Descríbelo a detalle</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Detalla los datos de tu
+                                tela</label>
+                            <div class="col-md-6 mb-3">
+                                <label for="priceInput" class="form-label">¿Cual es el precio?</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">S./</span>
+                                    <input type="number" class="form-control price-input" id="priceInput"
+                                        formControlName="accessoryPrice">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleColorInput" class="form-label">Elija el color de su tela</label>
+                                <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                                    title="Choose your color" formControlName="accessoryColor">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="container d-flex mb-3">
+                        <button appBackButton class="btn px-4 ms-4 d-inline-flex text-white " (click)="back()">
+                            Anterior
+                        </button>
+                        <button class=" btn px-4 ms-auto me-4 d-inline-flex text-white"
+                            [disabled]="this.formAccessory.invalid" (click)="edit()"> Editar Insumo
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

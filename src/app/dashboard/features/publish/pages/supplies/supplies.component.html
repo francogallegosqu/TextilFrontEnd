@@ -150,12 +150,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleColorInput" class="form-label">Elije la composicion de tu tela</label>
-                <select class="form-select" formControlName="fabricComposition">
-                    <option invalid value="">Seleccione una Composicion</option>
-                    <option *ngFor="let composition of compositions" [ngValue]="composition.idComposition">
-                        {{composition.percentageComposition}}</option>
-                </select>
+                <label for="exampleColorInput" class="form-label">Describe la composicion de tu tela</label>
+                <input type="text" class="form-control" id="compositionInput" formControlName="fabricComposition">
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">

@@ -8,6 +8,8 @@ import { ServiceComponent } from './pages/service/service.component';
 import { SuppliesComponent } from './pages/supplies/supplies.component';
 import { StepperHeaderComponent } from './components/stepper-header/stepper-header.component';
 import { StepperFooterComponent } from './components/stepper-footer/stepper-footer.component';
+import { EditServiceComponent } from './pages/edit-service/edit-service.component';
+import { EditSupplyComponent } from './pages/edit-supply/edit-supply.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { StepperFooterComponent } from './components/stepper-footer/stepper-foot
     ServiceComponent,
     SuppliesComponent,
     StepperHeaderComponent,
-    StepperFooterComponent
+    StepperFooterComponent,
+    EditServiceComponent,
+    EditSupplyComponent
   ],
   imports: [
     CommonModule,

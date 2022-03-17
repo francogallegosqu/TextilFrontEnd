@@ -9,7 +9,9 @@
                 <form class="d-flex">
                     <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
                     <button class="btn btn-secondary btn-sm me-3">Eliminar Avio</button>
-                    <button class="btn btn-primary btn-sm me-3">Editar Avio</button>
+                    <a [routerLink]="['/dashboard/publish/edit-supply', 'accessory', accessory.idAccessory]">
+                        <button class="btn btn-primary btn-sm me-3">Editar Avio</button>
+                    </a>
                 </form>
             </div>
             <div class="container-fluid px-0">

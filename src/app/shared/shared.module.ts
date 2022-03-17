@@ -5,11 +5,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { BackButtonDirective } from './directives/back-button.directive';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
+    BackButtonDirective,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     NavbarComponent,
     FontAwesomeModule,
-    FooterComponent
+    FooterComponent,
+    BackButtonDirective
   ]
 })
 export class SharedModule { }

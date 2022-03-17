@@ -1,4 +1,5 @@
 export interface Service {
+    priceService: any;
     idService: string,
     nameService: string,
     descriptionService: string,

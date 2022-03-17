@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Service } from '../../models/service';
-import { ServiceService } from '../../services/service.service';
+import { ServicesService } from 'src/app/core/services/services.service';
 
 @Component({
   selector: 'app-service',
@@ -21,17 +21,18 @@ export class ServiceComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private servService: ServiceService,
+    private servService: ServicesService,
     private authService: AuthService
   ) {
     this.form = this.fb.group({
       nameService: ['', [Validators.required]],
       descriptionService: ['', [Validators.required]],
+      priceService: ['', [Validators.required]]
     });
     this.showErrorServiceMessage = false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onStep(step: number) {
     if (this.currentStep < this.steps) {
@@ -49,14 +50,15 @@ export class ServiceComponent implements OnInit {
     this.showErrorServiceMessage = false;
     if (this.form.valid) {
       let user = this.authService.getUser();
-      let service: Service = {
+      let service = {
         nameService: this.form.value.nameService,
         descriptionService: this.form.value.descriptionService,
+        priceService: this.form.value.priceService,
         created_at: new Date().toString(),
         created_by: user?.idUsuario,
       };
       this.name = this.form.value.nameService;
-      this.servService.registerService(service).subscribe({
+      this.servService.postService(service).subscribe({
         next: (resp) => {
           this.registered = true;
           console.log(resp);

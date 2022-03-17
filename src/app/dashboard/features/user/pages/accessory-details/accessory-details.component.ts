@@ -13,6 +13,7 @@ export class AccessoryDetailsComponent implements OnInit {
   faArrowCircleLeft = faArrowCircleLeft;
   faLayerGroup = faLayerGroup;
   accessory!: Accessory;
+
   constructor(private supplyService: SuppliesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

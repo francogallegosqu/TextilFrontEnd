@@ -8,8 +8,10 @@
                 <h1 class="title fs-4"> {{this.fabric.nameFabric}}</h1>
                 <form class="d-flex">
                     <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
-                    <button class="btn btn-secondary btn-sm me-3">Eliminar Servicio</button>
-                    <button class="btn btn-primary btn-sm me-3">Editar Servicio</button>
+                    <button class="btn btn-secondary btn-sm me-3">Eliminar Tela</button>
+                    <a [routerLink]="['/dashboard/publish/edit-supply', 'fabric', fabric.idFabric]"><button
+                            class="btn btn-primary btn-sm me-3">Editar
+                            Tela</button></a>
                 </form>
             </div>
             <div class="container-fluid px-0">
@@ -51,8 +53,7 @@
                                     <div>
                                         <span class="icon-text-title">Composicion de la Tela <br></span>
                                         <div class="flex-row">
-                                            <span
-                                                class="fw-600 icon-text">{{this.fabric.composition.percentageComposition}}</span>
+                                            <span class="fw-600 icon-text">{{this.fabric.composition}</span>
                                         </div>
                                     </div>
                                 </div>
