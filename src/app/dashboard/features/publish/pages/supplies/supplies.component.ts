@@ -36,7 +36,6 @@ export class SuppliesComponent implements OnInit {
     private fb: FormBuilder,
     private categoryService: CategoryService,
     private supplyService: SuppliesService,
-    private compositionService: CompositionService,
     private authService: AuthService
   ) { }
 
@@ -84,10 +83,6 @@ export class SuppliesComponent implements OnInit {
       this.subCategories = data;
     });
 
-    this.compositionService.getAllCompositions().subscribe((data) => {
-      this.compositions = data;
-      console.log(this.compositions);
-    });
   }
 
   onStep(step: number) {
@@ -155,7 +150,7 @@ export class SuppliesComponent implements OnInit {
         nameFabric: this.formFabricStepTwo.value.fabricName,
         descriptionFabric: this.formFabricStepTwo.value.fabricDescription,
         tension: this.formFabricStepFour.value.fabricTension,
-        idComposition: this.formFabricStepFour.value.fabricComposition,
+        composition: this.formFabricStepFour.value.fabricComposition,
         created_by: this.user.idUsuario,
         created_at: new Date().toString(),
       };

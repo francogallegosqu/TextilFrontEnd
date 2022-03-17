@@ -7,7 +7,7 @@ export interface Fabric {
     nameFabric: string,
     descriptionFabric: string,
     tension: string,
-    composition: any,
+    composition: string,
     created_at: string,
     updated_at: string,
     created_by: string

@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '', component: DashboardComponent, children: [
       { path: 'user', loadChildren: () => import('./features/user/user.module').then(x => x.UserModule) },
-      { path: 'publish', loadChildren: () => import('./features/publish/publish.module').then(x => x.PublishModule) }
+      { path: 'publish', loadChildren: () => import('./features/publish/publish.module').then(x => x.PublishModule) },
+      { path: '**', redirectTo: '' }
     ]
   }
 ];

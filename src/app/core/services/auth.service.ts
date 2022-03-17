@@ -50,19 +50,9 @@ export class AuthService {
           localStorage.setItem(environment.TOKEN_NAME, response.jwt);
           localStorage.setItem('user', JSON.stringify(response.user));
           this._isLoggedIn$.next(true);
-          this.timeout = this.jwtHelper.getTokenExpirationDate(response.jwt)!.valueOf() - new Date().valueOf();
-          this.expirationCounter(this.timeout);
         }
       })
     );
-  }
-
-  expirationCounter(timeout: number) {
-    this.tokenSubscription.unsubscribe();
-    this.tokenSubscription = of(null).pipe(delay(timeout)).subscribe((expired) => {
-      console.log('EXPIRED!!');
-      this.logout();
-    });
   }
 
   isLoggedIn(): Observable<boolean> {

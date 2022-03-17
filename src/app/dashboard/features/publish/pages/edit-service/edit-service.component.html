@@ -1,0 +1,55 @@
+<div class="container px-0 my-4">
+    <div class="row justify-content-center">
+        <div class="col px-0">
+            <ng-container *ngIf="loading == false">
+                <div class="card pt-3">
+                    <div class="text-center">
+                        <p>Publicar Servicio</p>
+                        <h1>Editar Servicio</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Dolores, commodi.</p>
+                    </div>
+                    <div class="w-100 line mb-2"></div>
+                    <form class="p-4" [formGroup]="formService">
+                        <div class="row">
+                            <label for="formGroupExampleInput" class="form-label fs-5 fw-bold">Descripcion del
+                                Servicio</label>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating ">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" formControlName="serviceName">
+                                    <label for="floatingInput">Ponle un titulo</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-floating ">
+                                    <input type="number" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" formControlName="servicePrice">
+                                    <label for="floatingInput">Ponle un Precio (Soles)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea2" style="height: 100px"
+                                        formControlName="serviceDescription"></textarea>
+                                    <label for="floatingTextarea2">Descríbelo a detalle</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="container d-flex mb-3">
+                        <button appBackButton class="btn px-4 ms-4 d-inline-flex text-white " (click)="back()">
+                            Anterior
+                        </button>
+                        <button class=" btn px-4 ms-auto me-4 d-inline-flex text-white"
+                            [disabled]="this.formService.invalid" (click)="edit()"> Editar Insumo
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

@@ -46,5 +46,9 @@ export class ServicesService {
     return this.http.get(`${environment.HOST}/services/${id}`)
   }
 
+  postService(service: any) {
+    return this.http.post(`${environment.HOST}/services`, service)
+  }
+
 }
 

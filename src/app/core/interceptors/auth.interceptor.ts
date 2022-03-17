@@ -14,11 +14,10 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if (this.authService.getToken() != null) {
-
+    if (this.authService.getToken()) {
       if (this.authService.tokenExpired(this.authService.getToken()!)) {
         this.authService.logout();
         throw new Error("Token expired")

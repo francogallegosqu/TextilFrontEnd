@@ -12,34 +12,28 @@
             <div class="alert alert-danger" *ngIf="showErrorServiceMessage">
                 <p class="m-0">Debe ingresar todos los datos.</p>
             </div>
-            <div class="form-floating mb-3 mt-1">
-                <input type="text" class="form-control" id="floatingNameService" placeholder="Nombre Servicio"
-                    formControlName="nameService">
-                <label for="floatingNameService">Nombre de servicio</label>
+            <div class="row mb-3 mt-1">
+                <div class="col-md-6 mb-3">
+                    <div class="form-floating ">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            formControlName="nameService">
+                        <label for="floatingInput">Ponle un titulo</label>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="form-floating ">
+                        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            formControlName="priceService">
+                        <label for="floatingInput">Ponle un Precio (Soles)</label>
+                    </div>
+                </div>
             </div>
-
-            <!-- <div class="alert alert-danger"
-                *ngIf="form.get('nameService')?.invalid && (form.get('nameService')?.dirty || form.get('nameService')?.touched)">
-                <p class="m-0" *ngIf="form.get('nameService')?.hasError('required')">El Nombre del servicio es
-                    requerido.</p>
-            </div> -->
-
             <div class="form-floating mb-2">
                 <textarea formControlName="descriptionService" class="form-control" id="floatingDescripcion"
                     placeholder="Contraseña"></textarea>
                 <label for="floatingDescripcion">Descripcion de servicio</label>
             </div>
-            <!-- <div class="alert alert-danger"
-                *ngIf="form.get('descriptionService')?.invalid && (form.get('descriptionService')?.dirty || form.get('descriptionService')?.touched)">
-                <p class="m-0" *ngIf="form.get('descriptionService')?.hasError('required')">El campo Descripcion es
-                    requerido.</p>
-            </div> -->
-            <!-- <div class="row justify-content-center">
-                <div class="col-auto">
-                    <button class="mt-3 btn login-btn d-block mx-auto" type="submit"
-                        [disabled]="form.invalid">Ingresar</button>
-                </div>
-            </div> -->
+
         </form>
     </div>
     <div class="mt-auto pb-2">
