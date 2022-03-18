@@ -7,8 +7,10 @@
             <div class="container-fluid px-0">
                 <h1 class="title fs-4"> {{this.service.nameService}}</h1>
                 <form class="d-flex">
-                    <button class="btn btn-secondary btn-sm me-3">Cargar Fotos</button>
-                    <button class="btn btn-secondary btn-sm me-3">Eliminar Servicio</button>
+                    <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
+                        data-bs-target="#uploadFileModal">Cargar Fotos</button>
+                    <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Eliminar Servicio</button>
                     <a [routerLink]="['/dashboard/publish/edit-service', service.idService]">
                         <button class="btn btn-primary btn-sm me-3">Editar Servicio</button>
                     </a>
@@ -24,7 +26,6 @@
         </nav>
     </div>
 
-
     <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
         <li class="nav-item ps-4" role="presentation">
             <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details"
@@ -36,14 +37,12 @@
         </li>
     </ul>
 
-
-
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
             <div class="container ms-0 py-4">
                 <div class="row">
                     <div class="col-4 px-0">
-                        <app-items-carousel></app-items-carousel>
+                        <app-items-carousel [id]="this.service.idService"></app-items-carousel>
                     </div>
                     <div class="col-8">
                         <p>{{this.service.descriptionService}}</p>
@@ -113,8 +112,66 @@
         </div>
         <div class="tab-pane fade" id="clients" role="tabpanel" aria-labelledby="clients-tab">Clients</div>
     </div>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar este servicio?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+                    <button type="button" class="btn btn-primary">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- Upload File Modal -->
+    <div class="modal fade" id="uploadFileModal" tabindex="-1" aria-labelledby="uploadFileModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Galería de fotos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label mb-3"> Agrega hasta 4 fotos en formato PNG, JPG o JPEG a
+                            tu publicación y cada foto puede pesar como máximo</label>
+                        <input (change)="onFileSelected($event)" class="form-control" type="file" id="formFile">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+                    <button type="button" class="btn btn-primary" type="button" (click)="onUpload()">Agregar
+                        Imagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </ng-container>
 
 <ng-template #loading>

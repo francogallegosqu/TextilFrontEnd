@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { ImgHostingService } from 'src/app/core/services/img-hosting.service';
+import { ImageService } from 'src/app/core/services/image.service';
+import { Image } from '../../models/image';
 
 @Component({
   selector: 'app-items-carousel',
@@ -9,15 +9,20 @@ import { ImgHostingService } from 'src/app/core/services/img-hosting.service';
 })
 export class ItemsCarouselComponent implements OnInit {
 
-  @Input() imagesUrl!: string[];
+  @Input() id!: string;
   images: string[] = [];
-  constructor(private imgService: ImgHostingService) { }
+  constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
     this.images.push("assets/images/avatar-1.png");
     this.images.push("assets/images/avatar-2.png");
     this.images.push("assets/images/avatar-3.png");
-
+    this.imageService.getImagesById(this.id).subscribe(data => {
+      let imgList = data as Image[]
+      imgList.forEach(img => {
+        this.images.push(img.urlImage)
+      });
+    })
   }
 
 }

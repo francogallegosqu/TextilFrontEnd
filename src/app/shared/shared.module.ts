@@ -23,7 +23,8 @@ import { BackButtonDirective } from './directives/back-button.directive';
     NavbarComponent,
     FontAwesomeModule,
     FooterComponent,
-    BackButtonDirective
+    BackButtonDirective,
+
   ]
 })
 export class SharedModule { }

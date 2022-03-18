@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,15 +6,20 @@ import { Injectable } from '@angular/core';
 })
 export class ImgHostingService {
 
-  APIKEY = "add7f595b9338167aebe518b11162e4e";
-  HOST = "https://api.imgbb.com/1"
+  preset = "angular_textil"
+  could_name = "dvewj2lqa"
+  HOST = "https://api.cloudinary.com/v1_1"
 
   constructor(private http: HttpClient) { }
 
-  postImage() {
+  postImage(file: File) {
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', this.preset)
+    data.append('cloud_name', this.could_name)
 
+    return this.http.post(`${this.HOST}/${this.could_name}/image/upload`, data)
   }
-
   getImage() {
 
   }
