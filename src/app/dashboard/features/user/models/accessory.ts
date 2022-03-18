@@ -1,5 +1,5 @@
 export interface Accessory {
-    idAccessory: number,
+    idAccessory: string,
     nameAccessory: string,
     priceAccesory: number,
     colorAccessory: string,
