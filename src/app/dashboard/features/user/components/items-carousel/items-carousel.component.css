@@ -5,7 +5,7 @@
 }
 
 .carousel-indicators button {
-  background-color: #fff;
+  background-color: #505050;
 }
 
 .image {
@@ -15,5 +15,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
+  height: 355px;
+}
+
+.add-new-card {
   height: 355px;
 }

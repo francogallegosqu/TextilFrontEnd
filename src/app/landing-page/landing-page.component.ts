@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import {DOCUMENT} from '@angular/common';
 import {
   Component,
   HostListener,
@@ -6,18 +6,18 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 import {
   faCogs,
   faHandshake,
   faSignInAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { ProductsService } from '../core/services/products.service';
-import { ServicesService } from '../core/services/services.service';
-import { CAROUSEL_IMG_DATA_ITEMS } from './constants/carousel-img.const';
-import { CAROUSEL_DATA_ITEMS } from './constants/carousel.const';
-import { CarouselItem } from './models/carousel-item';
-import { Item } from './models/item';
+import {ProductsService} from '../core/services/products.service';
+import {ServicesService} from '../core/services/services.service';
+import {CAROUSEL_IMG_DATA_ITEMS} from './constants/carousel-img.const';
+import {CAROUSEL_DATA_ITEMS} from './constants/carousel.const';
+import {CarouselItem} from './models/carousel-item';
+import {Item} from './models/item';
 
 @Component({
   selector: 'app-landing-page',
@@ -42,7 +42,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     private serviceService: ServicesService,
     @Inject(DOCUMENT) private document: Document,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();
@@ -50,6 +51,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.myElement = this.document.getElementById('nav');
     this.myElement?.classList.remove('navbar-shadow');
   }
+
   ngOnDestroy() {
     this.myElement?.classList.add('navbar-shadow');
   }

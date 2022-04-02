@@ -1,179 +1,162 @@
 <ng-container *ngIf="service; else loading">
-    <div class="container-fuild py-2 px-4 header">
-        <a [routerLink]="['/dashboard/user/supplies']" class="d-block pt-2">
-            <fa-icon [icon]="faArrowCircleLeft" class="return-icon"></fa-icon>
-        </a>
-        <nav class="navbar navbar-dark bg-light px-0 mt-4">
-            <div class="container-fluid px-0">
-                <h1 class="title fs-4"> {{this.service.nameService}}</h1>
-                <form class="d-flex">
-                    <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
-                        data-bs-target="#uploadFileModal">Cargar Fotos</button>
-                    <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Eliminar Servicio</button>
-                    <a [routerLink]="['/dashboard/publish/edit-service', service.idService]">
-                        <button class="btn btn-primary btn-sm me-3">Editar Servicio</button>
-                    </a>
-                </form>
-            </div>
-            <div class="container-fluid px-0">
-                <span></span>
-                <label class="date-created d-none d-lg-block">
-                    Creación <strong>{{ this.service.created_at.slice(0, 15)}}</strong>
-                </label>
-            </div>
+  <div class="container-fuild py-2 px-4 header">
+    <a [routerLink]="['/dashboard/user/supplies']" class="d-block pt-2">
+      <fa-icon [icon]="faArrowCircleLeft" class="return-icon"></fa-icon>
+    </a>
+    <nav class="navbar navbar-dark bg-light px-0 mt-4">
+      <div class="container-fluid px-0">
+        <h1 class="title fs-4"> {{this.service.nameService}}</h1>
+        <form class="d-flex">
+          <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
+                  data-bs-target="#uploadFileModal">Cargar Fotos
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm me-3" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal">Eliminar Servicio
+          </button>
+          <a [routerLink]="['/dashboard/publish/edit-service', service.idService]">
+            <button class="btn btn-primary btn-sm me-3">Editar Servicio</button>
+          </a>
+        </form>
+      </div>
+      <div class="container-fluid px-0">
+        <span></span>
+        <label class="date-created d-none d-lg-block">
+          Creación <strong>{{ this.service.created_at.slice(0, 15)}}</strong>
+        </label>
+      </div>
 
-        </nav>
-    </div>
+    </nav>
+  </div>
 
-    <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
-        <li class="nav-item ps-4" role="presentation">
-            <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details"
-                type="button" role="tab" aria-controls="details" aria-selected="true">Detalles</button>
-        </li>
-        <li class="nav-item ps-2" role="presentation">
-            <button class="nav-link" id="clients-tab" data-bs-toggle="tab" data-bs-target="#clients" type="button"
-                role="tab" aria-controls="clients" aria-selected="false">Clientes</button>
-        </li>
-    </ul>
+  <ul class="nav nav-tabs pt-5" id="myTab" role="tablist">
+    <li class="nav-item ps-4" role="presentation">
+      <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details"
+              type="button" role="tab" aria-controls="details" aria-selected="true">Detalles
+      </button>
+    </li>
+    <li class="nav-item ps-2" role="presentation">
+      <button class="nav-link" id="clients-tab" data-bs-toggle="tab" data-bs-target="#clients" type="button"
+              role="tab" aria-controls="clients" aria-selected="false">Clientes
+      </button>
+    </li>
+  </ul>
 
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
-            <div class="container ms-0 py-4">
-                <div class="row">
-                    <div class="col-4 px-0">
-                        <app-items-carousel [id]="this.service.idService"></app-items-carousel>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+      <div class="container ms-0 py-4">
+        <div class="row">
+          <div class="col-lg-4 col-12 px-0 mb-4">
+            <app-items-carousel [id]="this.service.idService"></app-items-carousel>
+          </div>
+          <div class="col-lg-8 col-12">
+            <p>{{this.service.descriptionService}}</p>
+            <div class="row my-2">
+              <div class="col-12 col-lg-6">
+                <div class="d-flex pt-2">
+                  <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
+                  <div>
+                    <span class="icon-text-title">Precio<br></span>
+                    <div class="flex-row">
+                      <span class="fw-600 icon-text">{{this.service.priceService}}</span>
                     </div>
-                    <div class="col-8">
-                        <p>{{this.service.descriptionService}}</p>
-                        <div class="row my-2">
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
 
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="d-flex pt-2">
-                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>
-                                    <div>
-                                        <span class="icon-text-title">Atributo del Servicio <br></span>
-                                        <div class="flex-row">
-                                            <span class="fw-600 icon-text">Valor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <!--                            <div class="col-12 col-lg-6">-->
+              <!--                                <div class="d-flex pt-2">-->
+              <!--                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>-->
+              <!--                                    <div>-->
+              <!--                                        <span class="icon-text-title">Atributo del Servicio <br></span>-->
+              <!--                                        <div class="flex-row">-->
+              <!--                                            <span class="fw-600 icon-text">Valor</span>-->
+              <!--                                        </div>-->
+              <!--                                    </div>-->
+              <!--                                </div>-->
+              <!--                            </div>-->
+              <!--                            <div class="col-12 col-lg-6">-->
+              <!--                                <div class="d-flex pt-2">-->
+              <!--                                    <fa-icon [icon]="faLayerGroup" class="detail-icon me-2 "></fa-icon>-->
+              <!--                                    <div>-->
+              <!--                                        <span class="icon-text-title">Atributo del Servicio <br></span>-->
+              <!--                                        <div class="flex-row">-->
+              <!--                                            <span class="fw-600 icon-text">Valor</span>-->
+              <!--                                        </div>-->
+              <!--                                    </div>-->
+              <!--                                </div>-->
+              <!--                            </div>-->
             </div>
+          </div>
         </div>
-        <div class="tab-pane fade" id="clients" role="tabpanel" aria-labelledby="clients-tab">Clients</div>
+      </div>
     </div>
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+    <div class="tab-pane fade" id="clients" role="tabpanel" aria-labelledby="clients-tab">Clients</div>
+  </div>
+  <div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar este servicio?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
-                    <button type="button" class="btn btn-primary">Eliminar</button>
-                </div>
-            </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar este servicio?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+          <button type="button" class="btn btn-primary">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Upload File Modal -->
-    <div class="modal fade" id="uploadFileModal" tabindex="-1" aria-labelledby="uploadFileModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Galería de fotos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label mb-3"> Agrega hasta 4 fotos en formato PNG, JPG o JPEG a
-                            tu publicación y cada foto puede pesar como máximo</label>
-                        <input (change)="onFileSelected($event)" class="form-control" type="file" id="formFile">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
-                    <button type="button" class="btn btn-primary" type="button" (click)="onUpload()">Agregar
-                        Imagen</button>
-                </div>
-            </div>
+  <!-- Upload File Modal -->
+  <div class="modal fade" id="uploadFileModal" tabindex="-1" aria-labelledby="uploadFileModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Galería de fotos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="formFile" class="form-label mb-3"> Agrega hasta 4 fotos en formato PNG, JPG o JPEG a
+              tu publicación y cada foto puede pesar como máximo</label>
+            <input (change)="onFileSelected($event)" class="form-control" type="file" id="formFile">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+          <button type="button" class="btn btn-primary" type="button" (click)="onUpload()">Agregar
+            Imagen
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </ng-container>
 
 <ng-template #loading>
-    loading
+  loading
 </ng-template>
